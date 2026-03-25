@@ -1,492 +1,253 @@
 <!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mani Vaibhav Ruhanth Koliparthi | Data Engineer</title>
-    <meta name="description"
-        content="Portfolio of Mani Vaibhav Ruhanth Koliparthi, a Data Engineer specializing in ETL/ELT pipelines, Data Warehousing, and ML Ops. based in Glassboro, NJ.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@300;400;600;800&family=Outfit:wght@500;700;900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mani Vaibhav Ruhanth Koliparthi | Senior Data Engineer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface-variant": "#c4c6cc",
+              "outline-variant": "#44474c",
+              "on-secondary-fixed-variant": "#3c475d",
+              "secondary-container": "#3e4960",
+              "surface-container-highest": "#283646",
+              "primary-fixed-dim": "#00daf3",
+              "on-primary": "#00363d",
+              "on-secondary-container": "#adb8d3",
+              "surface-bright": "#2d3a4a",
+              "tertiary-fixed": "#d1e4ff",
+              "primary-fixed": "#9cf0ff",
+              "on-secondary": "#263046",
+              "on-tertiary": "#17324d",
+              "on-surface": "#d6e4f9",
+              "surface-container-high": "#1e2b3b",
+              "surface-tint": "#00daf3",
+              "on-error-container": "#ffdad6",
+              "inverse-primary": "#006875",
+              "on-secondary-fixed": "#101b30",
+              "surface-container-low": "#0f1c2c",
+              "on-primary-fixed-variant": "#004f58",
+              "on-background": "#d6e4f9",
+              "inverse-on-surface": "#243141",
+              "error-container": "#93000a",
+              "secondary": "#bbc6e2",
+              "primary": "#00daf3",
+              "error": "#ffb4ab",
+              "surface-dim": "#061423",
+              "primary-container": "#001e22",
+              "surface": "#061423",
+              "background": "#061423",
+              "on-primary-fixed": "#001f24",
+              "tertiary-container": "#001b33",
+              "outline": "#8e9196",
+              "on-primary-container": "#0090a1",
+              "surface-variant": "#283646",
+              "surface-container": "#132030",
+              "on-tertiary-container": "#6b85a4",
+              "surface-container-lowest": "#020f1e",
+              "secondary-fixed-dim": "#bbc6e2",
+              "secondary-fixed": "#d7e2ff",
+              "on-tertiary-fixed": "#001d36",
+              "on-tertiary-fixed-variant": "#2f4865",
+              "tertiary": "#afc9ea",
+              "tertiary-fixed-dim": "#afc9ea",
+              "inverse-surface": "#d6e4f9",
+              "on-error": "#690005"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glow:hover {
+        box-shadow: 0 0 15px rgba(0, 218, 243, 0.4);
+      }
+      .data-grid-texture {
+        background-image: radial-gradient(#44474c 0.5px, transparent 0.5px);
+        background-size: 24px 24px;
+        opacity: 0.1;
+      }
+    </style>
 </head>
-
-<body>
-
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container nav-container">
-            <a href="#" class="logo">Mani<span>.Data</span></a>
-            <ul class="nav-menu">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#blog">Learnings</a></li>
-                <li><a href="#contact" class="nav-btn">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <canvas id="hero-canvas"></canvas> <!-- Particle Network Background -->
-        <div class="hero-overlay"></div> <!-- Gradient Overlay for Text Readability -->
-
-        <div class="container hero-content">
-            <div class="hero-text-wrapper">
-                <p class="hero-greeting">Hello, I'm <span class="highlight-name">Mani Vaibhav</span></p>
-                <h1 class="hero-title">
-                    Architecting <br>
-                    <span class="gradient-text">Intelligent Data</span> <br>
-                    Systems.
-                </h1>
-                <p class="hero-subtitle">
-                    Data Engineer & AI Practitioner transforming raw streams into
-                    <span class="text-white">Reliable Pipelines</span>,
-                    <span class="text-white">Scalable Warehouses</span>, and
-                    <span class="text-white">ML-Ready Features</span>.
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30 selection:text-primary">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-[#061423]/70 backdrop-blur-xl shadow-[0_0_15px_rgba(0,218,243,0.08)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-xl font-bold tracking-tighter text-[#00daf3] font-headline">KINETIC.ARCH</div>
+<div class="hidden md:flex gap-8 items-center font-['Space_Grotesk'] tracking-tight text-sm uppercase">
+<a class="text-[#00daf3] border-b-2 border-[#00daf3] pb-1 duration-300 ease-in-out" href="index.html">Home</a>
+<a class="text-[#bbc6e2] hover:text-[#00daf3] transition-colors duration-300 ease-in-out" href="projects.html">Projects</a>
+<a class="text-[#bbc6e2] hover:text-[#00daf3] transition-colors duration-300 ease-in-out" href="about.html">About</a>
+<a class="text-[#bbc6e2] hover:text-[#00daf3] transition-colors duration-300 ease-in-out" href="contact.html">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#00daf3] cursor-pointer hover:bg-[#0f1c2c] p-2 rounded duration-300" data-icon="terminal">terminal</span>
+</div>
+</div>
+</nav>
+<main class="relative min-h-screen pt-24 overflow-hidden">
+<!-- Background Decorative Elements -->
+<div class="absolute inset-0 data-grid-texture pointer-events-none"></div>
+<div class="absolute -top-[10%] -right-[5%] w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
+<!-- Hero Section: Asymmetrical Layout -->
+<section class="max-w-7xl mx-auto px-8 pt-20 pb-32 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative z-10">
+<!-- Left Column: Primary Content (60%) -->
+<div class="lg:col-span-7 flex flex-col gap-8">
+<div class="flex flex-col gap-2">
+<span class="font-label text-xs tracking-widest text-primary uppercase opacity-80">SENIOR DATA ENGINEER</span>
+<h1 class="font-headline text-5xl md:text-7xl font-bold text-on-surface leading-[1.1] -tracking-[0.04em]">
+                        Mani Vaibhav Ruhanth <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-tertiary">Koliparthi</span>
+</h1>
+</div>
+<p class="font-headline text-2xl md:text-3xl text-secondary max-w-2xl leading-relaxed">
+                    Building Scalable Data Ecosystems for the next generation of intelligence.
                 </p>
-
-                <div class="hero-cta-group">
-                    <a href="resume.pdf" download class="btn btn-glow">
-                        <i class="fas fa-arrow-down"></i> Download Resume
-                    </a>
-                    <a href="#projects" class="btn btn-outline">
-                        View My Work
-                    </a>
-                </div>
-
-                <div class="tech-badge-row">
-                    <div class="tech-badge"><i class="fab fa-python"></i> Python</div>
-                    <div class="tech-badge"><i class="fas fa-snowflake"></i> Snowflake</div>
-                    <div class="tech-badge"><i class="fas fa-stream"></i> Kafka</div>
-                    <div class="tech-badge"><i class="fas fa-fire"></i> Spark</div>
-                </div>
+<p class="text-on-surface-variant text-lg max-w-xl leading-relaxed">
+                    Specializing in high-throughput ETL pipelines and distributed systems architecture. I transform raw technical complexity into elegant, resilient data infrastructure that scales with your ambition.
+                </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-primary text-on-primary font-headline font-bold px-8 py-4 rounded-sm flex items-center gap-2 glow transition-all duration-300 uppercase tracking-wider text-sm">
+                        View Projects
+                        <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="border border-outline-variant/15 text-secondary font-headline px-8 py-4 rounded-sm hover:bg-surface-container-low transition-all duration-300 uppercase tracking-wider text-sm">
+                        Download CV
+                    </button>
+</div>
+<!-- Technical Specs / Skills Chips -->
+<div class="pt-12 flex flex-col gap-4">
+<span class="font-label text-[10px] tracking-widest text-secondary/60 uppercase">Core Stack Infrastructure</span>
+<div class="flex flex-wrap gap-3">
+<div class="px-4 py-2 border border-outline-variant/15 rounded-sm font-label text-xs text-on-surface-variant hover:bg-primary-container/30 transition-all cursor-default">PYTHON</div>
+<div class="px-4 py-2 border border-outline-variant/15 rounded-sm font-label text-xs text-on-surface-variant hover:bg-primary-container/30 transition-all cursor-default">PYSPARK</div>
+<div class="px-4 py-2 border border-outline-variant/15 rounded-sm font-label text-xs text-on-surface-variant hover:bg-primary-container/30 transition-all cursor-default">DATABRICKS</div>
+<div class="px-4 py-2 border border-outline-variant/15 rounded-sm font-label text-xs text-on-surface-variant hover:bg-primary-container/30 transition-all cursor-default">AWS CLOUD</div>
+<div class="px-4 py-2 border border-outline-variant/15 rounded-sm font-label text-xs text-on-surface-variant hover:bg-primary-container/30 transition-all cursor-default">KAFKA</div>
+<div class="px-4 py-2 border border-outline-variant/15 rounded-sm font-label text-xs text-on-surface-variant hover:bg-primary-container/30 transition-all cursor-default">SNOWFLAKE</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Technical Metadata / Gutter (30% + 10% Gutter) -->
+<div class="lg:col-span-4 lg:col-start-9 flex flex-col gap-12">
+<!-- System Status Module -->
+<div class="bg-surface-container-low p-6 border-l-2 border-primary relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-2 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-4xl" data-icon="database">database</span>
+</div>
+<h3 class="font-label text-[10px] tracking-widest text-secondary uppercase mb-6">Current Build Status</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="font-label text-xs text-on-surface-variant/70">DEPLOYMENT_READY</span>
+<span class="text-[10px] font-mono text-primary">v2.4.0_LATEST</span>
+</div>
+<div class="w-full h-[1px] bg-outline-variant/10"></div>
+<div class="flex justify-between items-center">
+<span class="font-label text-xs text-on-surface-variant/70">LATENCY_OPTIMIZATION</span>
+<span class="text-[10px] font-mono text-secondary">ACTIVE</span>
+</div>
+<div class="w-full h-[1px] bg-outline-variant/10"></div>
+<div class="flex justify-between items-center">
+<span class="font-label text-xs text-on-surface-variant/70">REGION</span>
+<span class="text-[10px] font-mono text-secondary">US-EAST-1</span>
+</div>
+</div>
+</div>
+<!-- Abstract Visual Anchor -->
+<div class="aspect-square bg-surface-container border border-outline-variant/15 relative overflow-hidden group">
+<img alt="Cybersecurity and code" class="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-60 transition-all duration-700" data-alt="Abstract macro shot of a server rack with blue and cyan led lights reflecting on metallic surfaces in a dark room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcLmwONxYLQJhqUn6lCIIEQ_o7NFzc7BZXEg6OqQ86F135Zv6SItOmms5uPCRZvd6dJSiyPOR31CCiJ-h3bAcWSiFmj_TKheHqmWTvITULHFgsGvs7xj77SeKyPlab6Ej4to_zC-XReu3jUmX5NVvvFH-N5vSqRo9qcWIHvV2SnB68AjuJCUvy5y9zRn6fmnIkwLKN017_Ll6sysff3YflwkaIWlGeNV4ddax7zk1edTFEfq8KZeA5QMbJL-hXMN73_mFhNQOugag"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<span class="font-label text-[10px] tracking-widest text-primary uppercase">Architecture Deep-Dive</span>
+<p class="text-xs text-secondary mt-1">Exploring Petabyte-Scale Processing in Distributed Environments.</p>
+</div>
+</div>
+<!-- Social/Technical Links -->
+<div class="flex flex-col gap-3">
+<a class="flex items-center justify-between p-3 border border-outline-variant/10 hover:border-primary/30 hover:bg-surface-container-high transition-all group" href="#">
+<span class="font-label text-xs text-on-surface-variant group-hover:text-primary transition-colors">LINKEDIN_CONNECT</span>
+<span class="material-symbols-outlined text-sm text-secondary" data-icon="open_in_new">open_in_new</span>
+</a>
+<a class="flex items-center justify-between p-3 border border-outline-variant/10 hover:border-primary/30 hover:bg-surface-container-high transition-all group" href="#">
+<span class="font-label text-xs text-on-surface-variant group-hover:text-primary transition-colors">GITHUB_REPOS</span>
+<span class="material-symbols-outlined text-sm text-secondary" data-icon="code">code</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Bento Grid Experience Section -->
+<section class="max-w-7xl mx-auto px-8 py-24 border-t border-outline-variant/15">
+<h2 class="font-headline text-3xl font-bold mb-12 tracking-tight">ENGINEERED IMPACT</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1: Large Feature -->
+<div class="md:col-span-2 bg-surface-container-low p-8 relative overflow-hidden group">
+<div class="relative z-10 h-full flex flex-col justify-between">
+<div>
+<span class="font-label text-[10px] tracking-widest text-primary uppercase mb-4 block">Complex Systems</span>
+<h3 class="font-headline text-2xl font-bold mb-4">ETL Orchestration at Scale</h3>
+<p class="text-on-surface-variant text-sm max-w-md">Developing modular frameworks for Databricks that reduced processing costs by 40% while increasing throughput by 3x.</p>
+</div>
+<div class="pt-8">
+<span class="text-4xl font-mono text-primary/20 group-hover:text-primary/40 transition-colors">01</span>
+</div>
+</div>
+<!-- Decorative background element -->
+<div class="absolute -right-10 -bottom-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+</div>
+<!-- Card 2: Technical Focus -->
+<div class="bg-surface-container p-8 border-l-2 border-tertiary">
+<span class="font-label text-[10px] tracking-widest text-tertiary uppercase mb-4 block">Reliability</span>
+<h3 class="font-headline text-xl font-bold mb-4">Fault-Tolerant Pipelines</h3>
+<p class="text-on-surface-variant text-xs leading-relaxed">Implementing advanced error-handling and auto-recovery mechanisms in AWS-based data streams to ensure 99.9% uptime.</p>
+</div>
+<!-- Card 3: Metrics -->
+<div class="bg-surface-container p-8 flex flex-col justify-center items-center text-center">
+<span class="text-5xl font-headline font-bold text-primary mb-2">500TB+</span>
+<span class="font-label text-[10px] tracking-widest text-secondary uppercase">Data Managed Daily</span>
+</div>
+<!-- Card 4: Strategy -->
+<div class="md:col-span-2 bg-surface-container-low p-8 flex items-center gap-8 group">
+<div class="hidden sm:block w-32 h-32 bg-surface-container border border-outline-variant/15 flex-shrink-0 relative overflow-hidden">
+<img alt="Server infrastructure" class="w-full h-full object-cover grayscale opacity-50 group-hover:scale-110 transition-transform duration-500" data-alt="Symmetrical view of high-tech data center hallway with glowing blue lights on server cabinets" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLYscytpZSWw_tSnZxKnhwAcnuu8-9CYmECTFVkRUQDJpxkWpBePnHYJn_TlWCBH78Bcj45tkhaM8o3ObyWfDQsNGEDZqoNXrWttc9Qi1BNSxq20IJFCGNnrNoXrnO_8iVacexA4Kpm2QWtqzPzMaEDZpJ4CHxeFkcq3-JKLvnWb48lB2nRWtLBEmRm5TdPyzHEj_PeccpSnegZvkAatNd5470an6P5Rge1lxLlBRxCcY9--k5fgPo6ZKj3mxsPHGDK4rNyhTtJpY"/>
+</div>
+<div>
+<span class="font-label text-[10px] tracking-widest text-primary uppercase mb-2 block">Architecture Strategy</span>
+<h3 class="font-headline text-xl font-bold mb-2">Cloud-Native Transformation</h3>
+<p class="text-on-surface-variant text-sm">Leading the migration from legacy on-premise systems to modern, serverless cloud architectures using AWS Lambda and Glue.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#061423] w-full py-12 border-t border-[#44474c]/15">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 max-w-7xl mx-auto gap-4">
+<div class="text-[#00daf3] font-bold font-headline tracking-tighter">KINETIC ARCHITECT</div>
+<div class="font-['Space_Grotesk'] text-[10px] tracking-widest uppercase text-[#bbc6e2] opacity-80">
+                © 2024 KINETIC ARCHITECT | ENGINEERED FOR SCALE
             </div>
-        </div>
-
-        
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        I am a passionate <strong>Data Engineer</strong> with over 4 years of expertise in designing,
-                        building, and optimizing scalable data pipelines and analytics platforms.
-                        My work revolves around transforming raw, chaotic data into structured, reliable assets that
-                        drive business decisions and ML models.
-                    </p>
-                    <p>
-                        I specialize in <strong>Python, SQL, Apache Spark, and Cloud Platforms (AWS, Azure)</strong>.
-                        Unlike simple toy projects, I focus on building robust, production-grade systems—handling
-                        everything from streaming ingestion with Kafka to complex dimensional modeling in Snowflake.
-                    </p>
-                    <div class="about-highlight-box">
-                        <i class="fas fa-rocket"></i>
-                        <span>Turning Data into Intelligence.</span>
-                    </div>
-                    <p class="looking-for">
-                        <i class="fas fa-search"></i> Actively looking for <strong>Data Engineer / Analytics
-                            Engineer</strong> roles in the USA (Remote or Hybrid near Philadelphia/South Jersey).
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section (Trust Format) -->
-    <section id="experience" class="section">
-        <div class="container">
-            <h2 class="section-title">Experience</h2>
-            <div class="experience-wrapper">
-
-                <!-- CVS Health -->
-                <div class="job-card">
-                    <div class="job-header">
-                        <div class="company-logo-placeholder"><i class="fas fa-heartbeat"></i></div>
-                        <div class="job-info">
-                            <h3>Data Engineer</h3>
-                            <span class="company-name">CVS Health</span>
-                            <span class="job-duration">Jan 2024 – Present | Remote, USA</span>
-                        </div>
-                    </div>
-                    <div class="job-bullets">
-                        <ul class="trust-bullets">
-                            <li>Built low-latency <strong>Kafka–Flink</strong> pipelines to detect operational
-                                anomalies, cutting data latency by <strong>95%</strong> and enabling proactive alerts
-                                for downstream systems.</li>
-                            <li>Orchestrated patient segmentation pipelines using <strong>Airflow</strong> and
-                                <strong>Python</strong>, delivering <strong>99.9%</strong> reliability and fully
-                                eliminating manual intervention.
-                            </li>
-                            <li>Scaled NLP data preprocessing with distributed <strong>Spark</strong> jobs, reducing
-                                model training time by <strong>40%</strong> and improving experimentation velocity.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- eBay -->
-                <div class="job-card">
-                    <div class="job-header">
-                        <div class="company-logo-placeholder"><i class="fas fa-shopping-bag"></i></div>
-                        <div class="job-info">
-                            <h3>Data Engineer</h3>
-                            <span class="company-name">eBay</span>
-                            <span class="job-duration">Jan 2020 – Aug 2022 | Bengaluru, India</span>
-                        </div>
-                    </div>
-                    <div class="job-bullets">
-                        <ul class="trust-bullets">
-                            <li>Led the design and optimization of <strong>Snowflake</strong> and <strong>Spark</strong>
-                                ETL pipelines for a large-scale marketplace modernization effort, improving throughput
-                                by <strong>48%</strong>.</li>
-                            <li>Drove cloud cost optimization by implementing tiered storage lifecycles across
-                                <strong>Azure Data Lake</strong> and <strong>Snowflake</strong>, achieving
-                                <strong>17%</strong> cost savings with <strong>99.98%</strong> reliability.
-                            </li>
-                            <li>Built automated <strong>SQL</strong> and <strong>PySpark</strong> data quality
-                                frameworks, cutting data discrepancies by <strong>99.2%</strong>.</li>
-                            <li>Accelerated analytical queries by <strong>31%</strong> through optimized data models
-                                using partitioning and clustering techniques.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section (Enhanced Detail) -->
-    <section id="projects" class="section alt-bg">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Real-Time ML Feature Store</h3>
-                        <div class="project-links">
-                            <a href="https://github.com/ManiRukki/realtime_ml_feature_store"><i
-                                    class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                    <div class="tech-stack">
-                        <span>Kafka</span><span>Python</span><span>Redis</span>
-                    </div>
-                    <div class="project-details">
-                        <div class="detail-row">
-                            <strong>Problem:</strong> <span class="text-muted-light">Real-time features were unavailable
-                                for low-latency ML inference.</span>
-                        </div>
-                        <div class="detail-row">
-                            <strong>Architecture:</strong> <span class="text-accent">Kafka &rarr; Flink &rarr; Redis
-                                &rarr; API</span>
-                        </div>
-                        <div class="detail-row">
-                            <strong>Outcome:</strong> <span class="text-muted-light">Sub-second feature access and
-                                scalable ingestion pipeline.</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Streaming Event Pipeline</h3>
-                        <div class="project-links">
-                            <a href="https://github.com/ManiRukki/streaming_event_pipeline"><i
-                                    class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                    <div class="tech-stack">
-                        <span>Spark</span><span>Flink</span><span>Grafana</span>
-                    </div>
-                    <div class="project-details">
-                        <div class="detail-row">
-                            <strong>Problem:</strong> <span class="text-muted-light">High-velocity user clickstream data
-                                was unmonitored.</span>
-                        </div>
-                        <div class="detail-row">
-                            <strong>Architecture:</strong> <span class="text-accent">Event Bus &rarr; Spark Streaming
-                                &rarr; TimeSeries DB &rarr; Grafana</span>
-                        </div>
-                        <div class="detail-row">
-                            <strong>Outcome:</strong> <span class="text-muted-light">Live operational dashboards with <
-                                    5s latency.</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Enterprise Data Warehouse</h3>
-                        <div class="project-links">
-                            <a href="https://github.com/ManiRukki/entireprise_data_warehouse"><i
-                                    class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                    <div class="tech-stack">
-                        <span>Snowflake</span><span>dbt</span><span>Airflow</span>
-                    </div>
-                    <div class="project-details">
-                        <div class="detail-row">
-                            <strong>Problem:</strong> <span class="text-muted-light">Siloed data sources made
-                                cross-business reporting impossible.</span>
-                        </div>
-                        <div class="detail-row">
-                            <strong>Architecture:</strong> <span class="text-accent">Postgres/API &rarr; Airflow
-                                (Extract) &rarr; Snowflake &rarr; dbt (Model)</span>
-                        </div>
-                        <div class="detail-row">
-                            <strong>Outcome:</strong> <span class="text-muted-light">Unified Star Schema enabling
-                                self-serve BI for 3 departments.</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Customer Analytics Platform</h3>
-                        <div class="project-links">
-                            <a href="https://github.com/ManiRukki/customer-analytics-platform"><i
-                                    class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                    <div class="tech-stack">
-                        <span>BigQuery</span><span>Streamlit</span><span>SQL</span>
-                    </div>
-                    <div class="project-details">
-                        <div class="detail-row">
-                            <strong>Problem:</strong> <span class="text-muted-light">Stakeholders lacked visibility into
-                                churn and revenue drivers.</span>
-                        </div>
-                        <div class="detail-row">
-                            <strong>Architecture:</strong> <span class="text-accent">Polyglot Sources &rarr; BigQuery
-                                &rarr; Python/Streamlit App</span>
-                        </div>
-                        <div class="detail-row">
-                            <strong>Outcome:</strong> <span class="text-muted-light">Interactive data app used by sales
-                                team to reduce churn by 10%.</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section (Icon Grid) -->
-    <section id="skills" class="section">
-        <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
-
-            <div class="skills-grid-wrapper">
-
-                <div class="skill-group">
-                    <h3><i class="fas fa-code"></i> Core & Languages</h3>
-                    <div class="skill-cards">
-                        <div class="skill-card"><i class="fab fa-python"></i> <span>Python</span></div>
-                        <div class="skill-card"><i class="fas fa-database"></i> <span>SQL</span></div>
-                        <div class="skill-card"><i class="fas fa-terminal"></i> <span>Bash</span></div>
-                        <div class="skill-card"><i class="fas fa-code"></i> <span>Scala</span></div>
-                    </div>
-                </div>
-
-                <div class="skill-group">
-                    <h3><i class="fas fa-server"></i> Data Engineering</h3>
-                    <div class="skill-cards">
-                        <div class="skill-card"><i class="fas fa-snowflake"></i> <span>Snowflake</span></div>
-                        <div class="skill-card"><i class="fas fa-fire"></i> <span>Spark</span></div>
-                        <div class="skill-card"><i class="fas fa-wind"></i> <span>Airflow</span></div>
-                        <div class="skill-card"><i class="fas fa-layer-group"></i> <span>dbt</span></div>
-                        <div class="skill-card"><i class="fas fa-water"></i> <span>Flink</span></div>
-                        <div class="skill-card"><i class="fas fa-project-diagram"></i> <span>Kafka</span></div>
-                    </div>
-                </div>
-
-                <div class="skill-group">
-                    <h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
-                    <div class="skill-cards">
-                        <div class="skill-card"><i class="fab fa-aws"></i> <span>AWS</span></div>
-                        <div class="skill-card"><i class="fab fa-docker"></i> <span>Docker</span></div>
-                        <div class="skill-card"><i class="fab fa-git-alt"></i> <span>Git</span></div>
-                        <div class="skill-card"><i class="fas fa-box-open"></i> <span>S3 / Glue</span></div>
-                        <div class="skill-card"><i class="fas fa-network-wired"></i> <span>Redshift</span></div>
-                    </div>
-                </div>
-
-                <div class="skill-group">
-                    <h3><i class="fas fa-brain"></i> AI & ML</h3>
-                    <div class="skill-cards">
-                        <div class="skill-card"><i class="fas fa-robot"></i> <span>MLOps</span></div>
-                        <div class="skill-card"><i class="fas fa-smile"></i> <span>Hugging Face</span></div>
-                        <div class="skill-card"><i class="fas fa-comments"></i> <span>NLP</span></div>
-                        <div class="skill-card"><i class="fas fa-vector-square"></i> <span>Vector DBs</span></div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section (Cards) -->
-    <section id="education" class="section alt-bg">
-        <div class="container">
-            <h2 class="section-title">Education</h2>
-            <div class="education-grid-new">
-                <div class="edu-card-new">
-                    <div class="edu-icon-new"><i class="fas fa-graduation-cap"></i></div>
-                    <div class="edu-details-new">
-                        <h3>Master of Science</h3>
-                        <h4>Computer Science</h4>
-                        <p class="edu-institution">Rowan University, Glassboro, NJ</p>
-                        <p class="edu-years">Jan 2023 – Dec 2024</p>
-                    </div>
-                </div>
-                <div class="edu-card-new">
-                    <div class="edu-icon-new"><i class="fas fa-university"></i></div>
-                    <div class="edu-details-new">
-                        <h3>Bachelor of Technology</h3>
-                        <h4>Computer Science</h4>
-                        <p class="edu-institution">Presidency University, Bangalore</p>
-                        <p class="edu-years">Aug 2018 – Jun 2022</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Technical Notes Section (Renamed from Insights) -->
-    <section id="blog" class="section">
-        <div class="container">
-            <h2 class="section-title">Technical Notes & Learnings</h2>
-            <div class="insight-grid">
-
-                <div class="insight-card note-card">
-                    <div class="insight-icon"><i class="fas fa-bolt"></i></div>
-                    <div class="insight-content">
-                        <h3>Real-Time Systems</h3>
-                        <ul class="note-list">
-                            <li>Spark Streaming vs Flink: Spark works well for micro-batching, but Flink is
-                                non-negotiable for true low-latency, stateful processing.</li>
-                            <li>Handling Kafka consumer backpressure during traffic spikes without lag or message loss.
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="insight-card note-card">
-                    <div class="insight-icon"><i class="fas fa-server"></i></div>
-                    <div class="insight-content">
-                        <h3>Production Engineering</h3>
-                        <ul class="note-list">
-                            <li>Batch vs streaming trade-offs: Don’t stream unless latency is a hard requirement—the
-                                complexity cost is high.</li>
-                            <li>Idempotency is key in distributed pipelines to handle retries without data duplication.
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="insight-card note-card">
-                    <div class="insight-icon"><i class="fas fa-check-double"></i></div>
-                    <div class="insight-content">
-                        <h3>Data Quality</h3>
-                        <ul class="note-list">
-                            <li>Implementing circuit breakers in Airflow to stop bad data from polluting downstream
-                                tables.</li>
-                            <li>Shift-left testing: Catching schema changes before they break the warehouse.</li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section (Centered Glass Panel) -->
-    <section id="contact" class="section alt-bg contact-section-redesigned">
-        <div class="container">
-            <div class="contact-glass-panel">
-                <div class="contact-left">
-                    <h2>Let's Build Something Scalable.</h2>
-                    <p>I'm currently opening to discussing <strong>Data Engineer</strong> roles. Whether you have a
-                        question or just want to say hi, I'll try my best to get back to you!</p>
-                    <div class="contact-direct">
-                        <div class="direct-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>manikolipar@gmail.com</span>
-                        </div>
-                        <div class="direct-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Glassboro, NJ (Relocation OK)</span>
-                        </div>
-                    </div>
-                    <div class="social-row">
-                        <a href="https://www.linkedin.com/in/mani-vaibhav-k-286ba3354"><i
-                                class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/ManiRukki"><i class="fab fa-github"></i></a>
-                        <a href="resume.pdf" download><i class="fas fa-file-pdf"></i></a>
-                    </div>
-                </div>
-
-                <div class="contact-right">
-                    <form class="modern-form" action="#" method="POST"
-                        onsubmit="event.preventDefault(); alert('Message sent!');">
-                        <div class="form-floating">
-                            <input type="text" id="name" placeholder=" " required>
-                            <label for="name">Your Name</label>
-                        </div>
-                        <div class="form-floating">
-                            <input type="email" id="email" placeholder=" " required>
-                            <label for="email">Your Email</label>
-                        </div>
-                        <div class="form-floating">
-                            <textarea id="message" placeholder=" " rows="4" required></textarea>
-                            <label for="message">Your Message</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary submit-btn">Send Message <i
-                                class="fas fa-paper-plane"></i></button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p class="footer-tagline">Building scalable data systems for analytics and AI.</p>
-                <div class="footer-links">
-                    <a href="https://www.linkedin.com/in/mani-koliparthi-613106213"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/ManiRukki"><i class="fab fa-github"></i></a>
-                    <a href="resume.pdf" download><i class="fas fa-file-download"></i> Resume</a>
-                </div>
-                <p class="copyright">&copy; 2026 Mani Vaibhav Ruhanth Koliparthi.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-
-
-</html>
+<div class="flex gap-6 font-['Space_Grotesk'] text-[10px] tracking-widest uppercase">
+<a class="text-[#bbc6e2] hover:text-[#00daf3] transition-all duration-300" href="#">LinkedIn</a>
+<a class="text-[#bbc6e2] hover:text-[#00daf3] transition-all duration-300" href="#">GitHub</a>
+<a class="text-[#bbc6e2] hover:text-[#00daf3] transition-all duration-300" href="#">Email</a>
+</div>
+</div>
+</footer>
+</body></html>
