@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface-variant": "#c4c6cc",
+              "outline-variant": "#44474c",
+              "on-secondary-fixed-variant": "#3c475d",
+              "secondary-container": "#3e4960",
+              "surface-container-highest": "#283646",
+              "primary-fixed-dim": "#00daf3",
+              "on-primary": "#00363d",
+              "on-secondary-container": "#adb8d3",
+              "surface-bright": "#2d3a4a",
+              "tertiary-fixed": "#d1e4ff",
+              "primary-fixed": "#9cf0ff",
+              "on-secondary": "#263046",
+              "on-tertiary": "#17324d",
+              "on-surface": "#d6e4f9",
+              "surface-container-high": "#1e2b3b",
+              "surface-tint": "#00daf3",
+              "on-error-container": "#ffdad6",
+              "inverse-primary": "#006875",
+              "on-secondary-fixed": "#101b30",
+              "surface-container-low": "#0f1c2c",
+              "on-primary-fixed-variant": "#004f58",
+              "on-background": "#d6e4f9",
+              "inverse-on-surface": "#243141",
+              "error-container": "#93000a",
+              "secondary": "#bbc6e2",
+              "primary": "#00daf3",
+              "error": "#ffb4ab",
+              "surface-dim": "#061423",
+              "primary-container": "#001e22",
+              "surface": "#061423",
+              "background": "#061423",
+              "on-primary-fixed": "#001f24",
+              "tertiary-container": "#001b33",
+              "outline": "#8e9196",
+              "on-primary-container": "#0090a1",
+              "surface-variant": "#283646",
+              "surface-container": "#132030",
+              "on-tertiary-container": "#6b85a4",
+              "surface-container-lowest": "#020f1e",
+              "secondary-fixed-dim": "#bbc6e2",
+              "secondary-fixed": "#d7e2ff",
+              "on-tertiary-fixed": "#001d36",
+              "on-tertiary-fixed-variant": "#2f4865",
+              "tertiary": "#afc9ea",
+              "tertiary-fixed-dim": "#afc9ea",
+              "inverse-surface": "#d6e4f9",
+              "on-error": "#690005"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .glow:hover {
+            box-shadow: 0 0 15px rgba(0, 218, 243, 0.4);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30 selection:text-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#061423]/70 backdrop-blur-xl shadow-[0_0_15px_rgba(0,218,243,0.08)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-xl font-bold tracking-tighter text-[#00daf3] font-headline">KINETIC.ARCH</div>
+<div class="hidden md:flex gap-8 items-center font-label tracking-tight text-sm uppercase">
+<a class="text-[#bbc6e2] hover:text-[#00daf3] transition-colors duration-300 ease-in-out" href="index.html">Home</a>
+<a class="text-[#bbc6e2] hover:text-[#00daf3] transition-colors duration-300 ease-in-out" href="projects.html">Projects</a>
+<a class="text-[#bbc6e2] hover:text-[#00daf3] transition-colors duration-300 ease-in-out" href="about.html">About</a>
+<a class="text-[#00daf3] border-b-2 border-[#00daf3] pb-1 duration-300 ease-in-out" href="contact.html">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#00daf3] cursor-pointer hover:bg-[#0f1c2c] p-2 rounded transition-all">terminal</span>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-8 max-w-7xl mx-auto min-h-screen">
+<!-- Hero Section Asymmetry -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-24">
+<div class="lg:col-span-7">
+<span class="font-label text-primary tracking-[0.2em] uppercase text-[10px] mb-4 block">Initialization // Contact Protocol</span>
+<h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter text-on-surface mb-8 leading-[0.9]">
+                    Let's Build the <span class="text-primary">Future</span> of Data.
+                </h1>
+<p class="text-secondary text-lg max-w-xl leading-relaxed">
+                    Ready to scale your architecture or optimize your data pipelines? Reach out for collaborations, consulting, or technical inquiries.
+                </p>
+</div>
+<div class="lg:col-span-5 flex flex-col justify-end">
+<div class="bg-surface-container-low p-8 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-8xl" style="font-variation-settings: 'FILL' 1;">hub</span>
+</div>
+<div class="relative z-10 space-y-6">
+<div>
+<p class="font-label text-[10px] tracking-widest uppercase text-primary mb-1">Direct Link</p>
+<a class="text-xl font-headline font-medium hover:text-primary transition-colors" href="mailto:manikolipar@gmail.com">manikolipar@gmail.com</a>
+</div>
+<div>
+<p class="font-label text-[10px] tracking-widest uppercase text-primary mb-1">Voice Protocol</p>
+<p class="text-xl font-headline font-medium">+1 856-219-5618</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<!-- Contact Form -->
+<div class="lg:col-span-8 bg-surface-container p-8 md:p-12 shadow-2xl relative">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
+<form action="#" class="space-y-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="font-label text-[10px] tracking-widest uppercase text-secondary">Identification / Name</label>
+<input class="w-full bg-surface-container-highest border-0 border-b border-outline-variant focus:ring-0 focus:border-primary transition-all py-4 px-0 text-on-surface placeholder:text-outline-variant/50 font-body" placeholder="ARCHITECT NAME" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-[10px] tracking-widest uppercase text-secondary">Communication / Email</label>
+<input class="w-full bg-surface-container-highest border-0 border-b border-outline-variant focus:ring-0 focus:border-primary transition-all py-4 px-0 text-on-surface placeholder:text-outline-variant/50 font-body" placeholder="EMAIL@DOMAIN.COM" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label text-[10px] tracking-widest uppercase text-secondary">Objective / Message</label>
+<textarea class="w-full bg-surface-container-highest border-0 border-b border-outline-variant focus:ring-0 focus:border-primary transition-all py-4 px-0 text-on-surface placeholder:text-outline-variant/50 font-body resize-none" placeholder="DESCRIBE THE SCOPE OF THE PROJECT..." rows="4"></textarea>
+</div>
+<div class="pt-4">
+<button class="bg-primary text-on-primary font-label font-bold px-12 py-4 tracking-widest uppercase text-xs glow transition-all duration-300 flex items-center gap-3" type="submit">
+                            Execute Dispatch
+                            <span class="material-symbols-outlined text-sm">send</span>
+</button>
+</div>
+</form>
+</div>
+<!-- Social/Technical Links -->
+<div class="lg:col-span-4 space-y-12">
+<div>
+<h3 class="font-label text-xs tracking-[0.2em] uppercase text-primary mb-6">Network Nodes</h3>
+<div class="space-y-4">
+<a class="group flex items-center justify-between p-4 bg-surface-container-low hover:bg-surface-container transition-all" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary group-hover:text-primary">link</span>
+<span class="font-headline text-on-surface">LinkedIn</span>
+</div>
+<span class="material-symbols-outlined text-xs text-outline-variant group-hover:translate-x-1 transition-transform">arrow_forward_ios</span>
+</a>
+<a class="group flex items-center justify-between p-4 bg-surface-container-low hover:bg-surface-container transition-all" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary group-hover:text-primary">code</span>
+<span class="font-headline text-on-surface">GitHub</span>
+</div>
+<span class="material-symbols-outlined text-xs text-outline-variant group-hover:translate-x-1 transition-transform">arrow_forward_ios</span>
+</a>
+</div>
+</div>
+<div class="p-6 bg-surface-container-low/50 border border-outline-variant/10">
+<p class="font-label text-[9px] tracking-[0.3em] uppercase text-outline-variant mb-4">Current Status</p>
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+<span class="text-xs font-mono text-secondary">AVAILABLE FOR Q4 2024 PROJECTS</span>
+</div>
+</div>
+<div class="h-48 w-full bg-surface-container grayscale opacity-40 overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent z-10"></div>
+<img alt="Modern architecture" class="w-full h-full object-cover" data-alt="abstract architectural close-up of glass and steel skyscraper reflecting dark blue sky with sharp geometric lines and metallic texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSBBvr5H8APD8BUojRuArtzpKWQQ3u0xDxvblnmpNqype-qaHLGossunN0TwBBzL51ffESOcK8IQl8K4x7_p4-I-mD3VvgBXRGi6B74eCB-3HC1DCoiL9RkaQSa2pyA8jPBxzLwkp6oFolyCgZ6PKMy6HY203sZHUljpDBdbP9LnwHsdoUCBvhUY7QaTMWHQuJMZrloyfkeh5dk4azOCCNa3a8rdovUhnNjFXLOYqUITptPUsw8snCxwhV48TXlOfXLxXLFx5LgSk"/>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 border-t border-[#44474c]/15 bg-[#061423]">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 max-w-7xl mx-auto gap-4">
+<div class="text-[#00daf3] font-bold font-headline">KINETIC.ARCH</div>
+<div class="font-['Space_Grotesk'] text-[10px] tracking-widest uppercase text-[#bbc6e2]">
+                © 2024 KINETIC ARCHITECT | ENGINEERED FOR SCALE
+            </div>
+<div class="flex gap-6 font-['Space_Grotesk'] text-[10px] tracking-widest uppercase">
+<a class="text-[#bbc6e2] hover:text-[#00daf3] transition-all opacity-80 hover:opacity-100" href="www.linkedin.com/in/mani-vaibhav-k-286ba3354">LinkedIn</a>
+<a class="text-[#bbc6e2] hover:text-[#00daf3] transition-all opacity-80 hover:opacity-100" href="https://github.com/ManiRukki">GitHub</a>
+<a class="text-[#bbc6e2] hover:text-[#00daf3] transition-all opacity-80 hover:opacity-100" href="mailto:manikolipar@gmail.com">Email</a>
+</div>
+</div>
+</footer>
+</body></html>
