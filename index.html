@@ -1,253 +1,871 @@
 <!DOCTYPE html>
-
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Mani Vaibhav Ruhanth Koliparthi | Senior Data Engineer</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "on-surface-variant": "#c4c6cc",
-              "outline-variant": "#44474c",
-              "on-secondary-fixed-variant": "#3c475d",
-              "secondary-container": "#3e4960",
-              "surface-container-highest": "#283646",
-              "primary-fixed-dim": "#00daf3",
-              "on-primary": "#00363d",
-              "on-secondary-container": "#adb8d3",
-              "surface-bright": "#2d3a4a",
-              "tertiary-fixed": "#d1e4ff",
-              "primary-fixed": "#9cf0ff",
-              "on-secondary": "#263046",
-              "on-tertiary": "#17324d",
-              "on-surface": "#d6e4f9",
-              "surface-container-high": "#1e2b3b",
-              "surface-tint": "#00daf3",
-              "on-error-container": "#ffdad6",
-              "inverse-primary": "#006875",
-              "on-secondary-fixed": "#101b30",
-              "surface-container-low": "#0f1c2c",
-              "on-primary-fixed-variant": "#004f58",
-              "on-background": "#d6e4f9",
-              "inverse-on-surface": "#243141",
-              "error-container": "#93000a",
-              "secondary": "#bbc6e2",
-              "primary": "#00daf3",
-              "error": "#ffb4ab",
-              "surface-dim": "#061423",
-              "primary-container": "#001e22",
-              "surface": "#061423",
-              "background": "#061423",
-              "on-primary-fixed": "#001f24",
-              "tertiary-container": "#001b33",
-              "outline": "#8e9196",
-              "on-primary-container": "#0090a1",
-              "surface-variant": "#283646",
-              "surface-container": "#132030",
-              "on-tertiary-container": "#6b85a4",
-              "surface-container-lowest": "#020f1e",
-              "secondary-fixed-dim": "#bbc6e2",
-              "secondary-fixed": "#d7e2ff",
-              "on-tertiary-fixed": "#001d36",
-              "on-tertiary-fixed-variant": "#2f4865",
-              "tertiary": "#afc9ea",
-              "tertiary-fixed-dim": "#afc9ea",
-              "inverse-surface": "#d6e4f9",
-              "on-error": "#690005"
-            },
-            fontFamily: {
-              "headline": ["Space Grotesk"],
-              "body": ["Inter"],
-              "label": ["Space Grotesk"]
-            },
-            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
-          },
-        },
-      }
-    </script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Cormorant+Garamond:ital,wght@1,300;1,400&display=swap" rel="stylesheet"/>
 <style>
-      .material-symbols-outlined {
-        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-      }
-      .glow:hover {
-        box-shadow: 0 0 15px rgba(0, 218, 243, 0.4);
-      }
-      .data-grid-texture {
-        background-image: radial-gradient(#44474c 0.5px, transparent 0.5px);
-        background-size: 24px 24px;
-        opacity: 0.1;
-      }
-    </style>
+:root{
+  --bg:#030911;--bg2:#060E1A;--bg3:#0B1523;
+  --s1:#0F1C2C;--s2:#131F2E;
+  --c:#00CCE8;--cg:rgba(0,204,232,.09);--cb:rgba(0,204,232,.18);
+  --amber:#F0A500;--green:#00DE9A;--red:#FF3358;--purple:#9B6FFF;
+  --t1:#E2F0FA;--t2:#6A94B0;--t3:#2C4C62;
+  --bd:rgba(0,204,232,.055);--bdb:rgba(0,204,232,.15);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--t1);font-family:'JetBrains Mono',monospace;overflow-x:hidden;line-height:1.65}
+a{color:inherit;text-decoration:none}
+::selection{background:rgba(0,204,232,.2);color:var(--c)}
+canvas#bg{position:fixed;inset:0;z-index:0;pointer-events:none}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:center;justify-content:space-between;padding:22px 64px;background:rgba(3,9,17,.82);backdrop-filter:blur(28px);border-bottom:1px solid var(--bd);transition:padding .35s}
+nav.sc{padding:14px 64px}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:14px;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;display:flex;align-items:baseline;gap:2px}
+.logo-main{color:var(--t1)}.logo-accent{color:var(--c)}.logo-dim{color:var(--t3)}
+.nl{display:flex;gap:42px;align-items:center}
+.nl a{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--t2);transition:color .2s;position:relative;padding-bottom:3px}
+.nl a::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--c);transform:scaleX(0);transition:transform .25s;transform-origin:left}
+.nl a:hover,.nl a.on{color:var(--c)}
+.nl a:hover::after,.nl a.on::after{transform:scaleX(1)}
+.nhire{font-size:10px;letter-spacing:.15em;text-transform:uppercase;border:1px solid var(--bdb);color:var(--c);padding:10px 22px;font-family:'JetBrains Mono',monospace;cursor:pointer;background:transparent;transition:all .2s}
+.nhire:hover{background:var(--cg);border-color:var(--c)}
+.ham{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.ham span{display:block;width:22px;height:1px;background:var(--c)}
+
+/* PAGES */
+.page{display:none;min-height:100vh;position:relative;z-index:1}
+.page.on{display:block;animation:fadein .4s ease both}
+@keyframes fadein{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+/* ══ HOME HERO ══ */
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:100vh;padding-top:80px;border-bottom:1px solid var(--bd)}
+.hl{padding:90px 56px 90px 64px;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--bd);position:relative;overflow:hidden}
+.hl::after{content:'';position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--c),transparent);opacity:.18;animation:scan 9s linear infinite;pointer-events:none}
+@keyframes scan{0%{top:0;opacity:0}8%{opacity:.18}92%{opacity:.18}100%{top:100%;opacity:0}}
+.htag{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--c);margin-bottom:28px;display:flex;align-items:center;gap:14px;opacity:0;animation:up .7s .15s both}
+.htag::before{content:'';width:36px;height:1px;background:var(--c)}
+@keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.hfn{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(38px,4.6vw,72px);line-height:.92;letter-spacing:-.04em;opacity:0;animation:up .7s .28s both}
+.hfn .cy{color:var(--c);display:block}
+.hfn .serif{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:.62em;color:var(--t2);display:block;margin-top:12px;letter-spacing:.01em;line-height:1.3}
+.hbar{width:44px;height:1px;background:var(--bdb);margin:28px 0;opacity:0;animation:up .7s .4s both}
+.hdesc{font-size:12px;color:var(--t2);line-height:2.05;max-width:460px;margin-bottom:44px;border-left:2px solid var(--bdb);padding-left:16px;opacity:0;animation:up .7s .5s both}
+.hdesc strong{color:var(--t1);font-weight:400}
+.hbtns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:52px;opacity:0;animation:up .7s .6s both}
+.bp{font-size:10px;letter-spacing:.15em;text-transform:uppercase;background:var(--c);color:#020911;padding:14px 30px;font-family:'JetBrains Mono',monospace;font-weight:500;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:9px;border:none;transition:background .2s,transform .12s}
+.bp:hover{background:#00EAFF;transform:translateY(-2px)}
+.bs{font-size:10px;letter-spacing:.15em;text-transform:uppercase;background:transparent;color:var(--c);padding:14px 26px;border:1px solid var(--bdb);font-family:'JetBrains Mono',monospace;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:9px;transition:all .2s}
+.bs:hover{background:var(--cg);border-color:var(--c);transform:translateY(-2px)}
+
+/* TOOLS ROW */
+.tools-row{opacity:0;animation:up .7s .72s both}
+.tools-label{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--t3);margin-bottom:12px}
+.tools-chips{display:flex;flex-wrap:wrap;gap:6px}
+.tc{font-size:9px;padding:5px 10px;border:1px solid var(--bd);color:var(--t3);text-transform:uppercase;letter-spacing:.08em;transition:all .2s;cursor:default}
+.tc:hover{border-color:var(--c);color:var(--c);background:var(--cg)}
+.tc.hi{border-color:var(--bdb);color:var(--t2)}
+
+/* RIGHT — interactive pipeline */
+.hr{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:80px 40px;gap:0;background:linear-gradient(135deg,var(--bg) 0%,var(--bg3) 100%)}
+.hr-lbl{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--t3);margin-bottom:20px;align-self:flex-start}
+#pviz{width:100%;max-width:500px}
+
+/* METRIC STRIP */
+.ms{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)}
+.mi{padding:26px 14px;text-align:center;border-right:1px solid var(--bd);position:relative;cursor:default;transition:background .3s;overflow:hidden}
+.mi:last-child{border-right:none}
+.mi:hover{background:var(--bg3)}
+.mi::after{content:'';position:absolute;bottom:0;left:50%;right:50%;height:2px;background:var(--c);transition:all .35s}
+.mi:hover::after{left:0;right:0}
+.mv{font-family:'Syne',sans-serif;font-weight:800;font-size:22px;color:var(--c);display:block;line-height:1;margin-bottom:5px}
+.ml{font-size:9px;color:var(--t3);letter-spacing:.12em;text-transform:uppercase}
+
+/* ══ SHARED SECTION ══ */
+.sec{padding:88px 64px;border-top:1px solid var(--bd)}
+.sh{display:flex;align-items:baseline;gap:18px;margin-bottom:60px}
+.sn{font-size:10px;color:var(--t3);letter-spacing:.15em;font-family:'JetBrains Mono',monospace}
+.st{font-family:'Syne',sans-serif;font-weight:700;font-size:30px;letter-spacing:-.025em}
+
+/* EXPERIENCE CARDS */
+.ecards{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--bd)}
+.ec{background:var(--bg);padding:48px;position:relative;overflow:hidden;transition:background .3s}
+.ec:hover{background:var(--bg3)}
+.ec::before{content:'';position:absolute;top:0;left:0;width:2px;height:0;background:var(--c);transition:height .5s}
+.ec:hover::before{height:100%}
+.etag{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--c);margin-bottom:14px;display:block}
+.etitle{font-family:'Syne',sans-serif;font-weight:700;font-size:19px;margin-bottom:5px;letter-spacing:-.01em;line-height:1.2}
+.eco{font-size:10px;color:var(--t2);margin-bottom:20px;letter-spacing:.05em}
+.ebs{list-style:none;display:flex;flex-direction:column;gap:9px}
+.ebs li{font-size:11px;color:var(--t2);line-height:1.75;padding-left:16px;position:relative}
+.ebs li::before{content:'›';position:absolute;left:0;color:var(--c);font-size:13px;line-height:1.55}
+.ebs li strong{color:var(--c);font-weight:400}
+.emets{display:grid;grid-template-columns:repeat(3,1fr);margin-top:28px;border:1px solid var(--bd)}
+.em{padding:14px 16px;border-right:1px solid var(--bd);text-align:center}
+.em:last-child{border-right:none}
+.emv{font-family:'Syne',sans-serif;font-weight:700;font-size:18px;color:var(--c);display:block;margin-bottom:3px}
+.emk{font-size:9px;color:var(--t3);text-transform:uppercase;letter-spacing:.1em}
+
+/* TOOLS SECTION */
+.tsec{padding:0 64px 88px}
+.tsec-inner{border:1px solid var(--bd);padding:48px}
+.tsec-title{font-family:'Syne',sans-serif;font-weight:700;font-size:18px;margin-bottom:6px;letter-spacing:-.01em}
+.tsec-sub{font-size:11px;color:var(--t2);margin-bottom:36px;line-height:1.8;max-width:560px}
+.tgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--bd)}
+.tcat{background:var(--bg);padding:24px;transition:background .3s}
+.tcat:hover{background:var(--bg3)}
+.tcat-title{font-size:9px;text-transform:uppercase;letter-spacing:.2em;color:var(--c);margin-bottom:14px}
+.tcat-items{display:flex;flex-direction:column;gap:8px}
+.tcat-item{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--t2)}
+.tcat-item::before{content:'';width:5px;height:5px;background:var(--c);border-radius:50%;flex-shrink:0;opacity:.7}
+.tcat-item.hi{color:var(--t1)}
+.tcat-item.hi::before{opacity:1}
+
+/* STAKEHOLDER CALLOUT */
+.scallout{margin:0 64px 88px;padding:40px 48px;border:1px solid var(--bdb);background:var(--bg3);position:relative;overflow:hidden}
+.scallout::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--c)}
+.sc-label{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--c);margin-bottom:16px}
+.sc-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(18px,1.8vw,24px);color:var(--t1);line-height:1.55;max-width:700px;margin-bottom:20px}
+.sc-items{display:flex;flex-wrap:wrap;gap:10px}
+.sc-tag{font-size:10px;padding:5px 12px;border:1px solid var(--bdb);color:var(--t2);text-transform:uppercase;letter-spacing:.08em}
+
+/* ══ PROJECTS ══ */
+#projects{padding:120px 64px 80px}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--bd);margin-top:56px}
+.pc{background:var(--bg);padding:44px;position:relative;overflow:hidden;transition:background .3s}
+.pc:hover{background:var(--bg3)}
+.pc::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c),var(--purple));transform:scaleX(0);transform-origin:left;transition:transform .5s}
+.pc:hover::after{transform:scaleX(1)}
+.pnum{font-size:9px;color:var(--t3);letter-spacing:.2em;margin-bottom:16px;display:block}
+.pname{font-family:'Syne',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;line-height:1.2;margin-bottom:5px}
+.psub{font-size:9px;color:var(--c);letter-spacing:.12em;text-transform:uppercase;margin-bottom:18px}
+.pdesc{font-size:11px;color:var(--t2);line-height:1.9;margin-bottom:22px}
+.arch{margin-bottom:22px;padding:18px;background:var(--s1);border:1px solid var(--bd)}
+.albl{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--t3);margin-bottom:12px}
+.pst{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--bd);margin-bottom:20px}
+.psti{padding:13px 10px;border-right:1px solid var(--bd);text-align:center}
+.psti:last-child{border-right:none}
+.pstv{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--c);display:block;margin-bottom:3px}
+.pstk{font-size:9px;color:var(--t3);text-transform:uppercase;letter-spacing:.07em}
+.ptags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:18px}
+.ptag{font-size:9px;padding:3px 7px;border:1px solid var(--bdb);color:var(--t3);text-transform:uppercase;letter-spacing:.05em}
+.plink{display:inline-flex;align-items:center;gap:7px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--c);border-bottom:1px solid var(--bdb);padding-bottom:3px;transition:border-color .2s,gap .2s}
+.plink:hover{border-color:var(--c);gap:12px}
+
+/* ══ ABOUT ══ */
+#about{padding:120px 64px 80px}
+.agrid{display:grid;grid-template-columns:1fr 340px;gap:60px;margin-top:56px}
+.aintro{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(20px,2.2vw,30px);color:var(--t1);line-height:1.45;margin-bottom:36px}
+.abody{font-size:12px;color:var(--t2);line-height:2;margin-bottom:18px}
+.tl{margin-top:48px}
+.tl-title{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--t3);margin-bottom:28px}
+.te{display:grid;grid-template-columns:96px 1fr;gap:22px;margin-bottom:36px;position:relative}
+.te::before{content:'';position:absolute;left:106px;top:8px;bottom:-36px;width:1px;background:var(--bd)}
+.te:last-child::before{display:none}
+.ty{font-size:9px;color:var(--t3);letter-spacing:.08em;text-align:right;padding-top:4px}
+.tr{padding-left:20px;position:relative}
+.tr::before{content:'';position:absolute;left:-5px;top:8px;width:8px;height:8px;background:var(--c);border-radius:50%;box-shadow:0 0 0 3px rgba(0,204,232,.14)}
+.tco{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;margin-bottom:2px}
+.trole{font-size:9px;color:var(--c);text-transform:uppercase;letter-spacing:.12em;margin-bottom:9px}
+.tbs{list-style:none;display:flex;flex-direction:column;gap:5px}
+.tbs li{font-size:11px;color:var(--t2);line-height:1.65;padding-left:13px;position:relative}
+.tbs li::before{content:'›';position:absolute;left:0;color:var(--c)}
+.aside{display:flex;flex-direction:column;gap:1px}
+.sg{padding:18px 20px;border:1px solid var(--bd);transition:background .2s;margin-bottom:1px}
+.sg:hover{background:var(--s1)}
+.sgtl{font-size:9px;text-transform:uppercase;letter-spacing:.2em;color:var(--c);margin-bottom:10px}
+.stags{display:flex;flex-wrap:wrap;gap:5px}
+.stag{font-size:9px;padding:4px 7px;background:var(--s2);color:var(--t2);letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--bd)}
+.cb{padding:14px 20px;border:1px solid var(--bd);display:flex;justify-content:space-between;align-items:center;margin-bottom:1px}
+.cn{font-size:11px;color:var(--t2)}
+.cs{font-size:9px;letter-spacing:.08em;padding:3px 7px;text-transform:uppercase}
+.cs.ok{color:var(--green);border:1px solid rgba(0,222,154,.25)}
+.cs.ip{color:var(--amber);border:1px solid rgba(240,165,0,.25)}
+
+/* ══ CONTACT ══ */
+#contact{padding:120px 64px 80px}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:56px}
+.cintro{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(20px,2vw,28px);color:var(--t1);line-height:1.45;margin-bottom:32px}
+.cinfo{display:flex;flex-direction:column}
+.ci{display:flex;align-items:flex-start;gap:18px;padding:18px 0;border-bottom:1px solid var(--bd)}
+.ci:first-child{border-top:1px solid var(--bd)}
+.cion{width:32px;height:32px;border:1px solid var(--bdb);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--c);font-size:12px}
+.clbl{font-size:9px;text-transform:uppercase;letter-spacing:.15em;color:var(--t3);margin-bottom:3px}
+.cval{font-size:12px;color:var(--t1);transition:color .2s}
+a.cval:hover{color:var(--c)}
+.form{display:flex;flex-direction:column;gap:14px}
+.flbl{font-size:9px;text-transform:uppercase;letter-spacing:.15em;color:var(--t3);display:block;margin-bottom:5px}
+.fin,.fta{width:100%;background:var(--s1);border:1px solid var(--bd);color:var(--t1);font-family:'JetBrains Mono',monospace;font-size:12px;padding:12px 14px;outline:none;transition:border-color .2s;resize:none}
+.fin:focus,.fta:focus{border-color:var(--c)}
+.fta{min-height:120px}
+.fsub{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#020911;background:var(--c);border:none;padding:14px 28px;cursor:pointer;font-family:'JetBrains Mono',monospace;font-weight:500;transition:background .2s,transform .12s;align-self:flex-start}
+.fsub:hover{background:#00EAFF;transform:translateY(-2px)}
+
+footer{border-top:1px solid var(--bd);padding:26px 64px;display:flex;justify-content:space-between;align-items:center;font-size:9px;color:var(--t3);letter-spacing:.12em;text-transform:uppercase;position:relative;z-index:1}
+footer a{color:var(--t3);transition:color .2s}
+footer a:hover{color:var(--c)}
+.fl{display:flex;gap:20px}
+
+.toast{position:fixed;bottom:28px;right:28px;background:var(--s1);border:1px solid var(--green);color:var(--green);font-size:10px;letter-spacing:.1em;padding:11px 20px;z-index:9000;transform:translateY(50px);opacity:0;transition:all .3s}
+.toast.on{transform:translateY(0);opacity:1}
+
+/* REVEAL */
+.r{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}
+.r.v{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+  .hero{grid-template-columns:1fr}.hr{display:none}
+  .ms{grid-template-columns:repeat(3,1fr)}.mi:nth-child(n+4){display:none}
+  .ecards,.pgrid,.agrid,.cgrid{grid-template-columns:1fr}
+  .tgrid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  nav{padding:14px 20px}.nl{display:none}
+  .nl.open{display:flex;flex-direction:column;position:fixed;top:57px;left:0;right:0;background:var(--bg2);border-bottom:1px solid var(--bd);padding:20px;gap:18px}
+  .ham{display:flex}.nhire{display:none}
+  .hl{padding:44px 20px}
+  .sec,.tsec{padding:56px 20px}
+  .tsec{padding:0 20px 56px}
+  .scallout{margin:0 20px 56px}
+  #projects,#about,#contact{padding:96px 20px 56px}
+  .ms{grid-template-columns:repeat(2,1fr)}.mi:nth-child(n+3){display:none}
+  footer{flex-direction:column;gap:10px;text-align:center;padding:18px}
+  .tgrid{grid-template-columns:1fr 1fr}
+  .emets{grid-template-columns:repeat(2,1fr)}
+}
+</style>
 </head>
-<body class="bg-surface text-on-surface font-body selection:bg-primary/30 selection:text-primary">
-<!-- Top Navigation Bar -->
-<nav class="fixed top-0 w-full z-50 bg-[#061423]/70 backdrop-blur-xl shadow-[0_0_15px_rgba(0,218,243,0.08)]">
-<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
-<div class="text-xl font-bold tracking-tighter text-[#00daf3] font-headline">KINETIC.ARCH</div>
-<div class="hidden md:flex gap-8 items-center font-['Space_Grotesk'] tracking-tight text-sm uppercase">
-<a class="text-[#00daf3] border-b-2 border-[#00daf3] pb-1 duration-300 ease-in-out" href="index.html">Home</a>
-<a class="text-[#bbc6e2] hover:text-[#00daf3] transition-colors duration-300 ease-in-out" href="projects.html">Projects</a>
-<a class="text-[#bbc6e2] hover:text-[#00daf3] transition-colors duration-300 ease-in-out" href="about.html">About</a>
-<a class="text-[#bbc6e2] hover:text-[#00daf3] transition-colors duration-300 ease-in-out" href="contact.html">Contact</a>
-</div>
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-[#00daf3] cursor-pointer hover:bg-[#0f1c2c] p-2 rounded duration-300" data-icon="terminal">terminal</span>
-</div>
-</div>
+<body>
+
+<canvas id="bg"></canvas>
+<div class="toast" id="toast">Message sent ✓</div>
+
+<nav id="nav">
+  <div class="logo" onclick="go('home')">
+    <span class="logo-main">MANI</span>
+    <span class="logo-accent">.</span>
+    <span class="logo-dim">DE</span>
+  </div>
+  <div class="nl" id="nl">
+    <a href="#" onclick="go('home')" id="n-home" class="on">Home</a>
+    <a href="#" onclick="go('projects')" id="n-projects">Projects</a>
+    <a href="#" onclick="go('about')" id="n-about">About</a>
+    <a href="#" onclick="go('contact')" id="n-contact">Contact</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:14px">
+    <a class="nhire" href="mailto:manikolipar@gmail.com">Hire Me</a>
+    <button class="ham" id="ham" onclick="tgnav()"><span></span><span></span><span></span></button>
+  </div>
 </nav>
-<main class="relative min-h-screen pt-24 overflow-hidden">
-<!-- Background Decorative Elements -->
-<div class="absolute inset-0 data-grid-texture pointer-events-none"></div>
-<div class="absolute -top-[10%] -right-[5%] w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
-<!-- Hero Section: Asymmetrical Layout -->
-<section class="max-w-7xl mx-auto px-8 pt-20 pb-32 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative z-10">
-<!-- Left Column: Primary Content (60%) -->
-<div class="lg:col-span-7 flex flex-col gap-8">
-<div class="flex flex-col gap-2">
-<span class="font-label text-xs tracking-widest text-primary uppercase opacity-80">SENIOR DATA ENGINEER</span>
-<h1 class="font-headline text-5xl md:text-7xl font-bold text-on-surface leading-[1.1] -tracking-[0.04em]">
-                        Mani Vaibhav Ruhanth <br/>
-<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-tertiary">Koliparthi</span>
-</h1>
+
+<!-- ══════════════════════ HOME ══════════════════════ -->
+<div class="page on" id="home">
+
+  <section class="hero">
+    <div class="hl">
+      <div class="htag" id="typed">Senior Data Engineer · 5+ Years</div>
+      <h1 class="hfn">
+        Mani Vaibhav<br/>
+        <span class="cy">Ruhanth</span>
+        <span class="serif">Koliparthi</span>
+      </h1>
+      <div class="hbar"></div>
+      <p class="hdesc">
+        I architect <strong>high-throughput data platforms</strong> that move millions of events per second,
+        migrate <strong>petabyte-scale warehouses</strong> with zero data loss,
+        and build <strong>governance layers</strong> that keep enterprise data trustworthy.
+        Currently at CVS Health. Previously at eBay.
+      </p>
+      <div class="hbtns">
+        <a class="bp" href="#" onclick="go('projects')">View Projects →</a>
+        <a class="bs" href="https://github.com/ManiRukki" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="bs" href="https://www.linkedin.com/in/mani-vaibhav-k-286ba3354" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+      <div class="tools-row">
+        <div class="tools-label">// Core Infrastructure</div>
+        <div class="tools-chips">
+          <span class="tc hi">Databricks</span><span class="tc hi">dbt Core</span>
+          <span class="tc hi">Snowflake</span><span class="tc hi">Apache Kafka</span>
+          <span class="tc hi">Apache Flink</span><span class="tc hi">Terraform</span>
+          <span class="tc hi">Git · GitHub</span><span class="tc">Delta Lake</span>
+          <span class="tc">PySpark</span><span class="tc">BigQuery</span>
+          <span class="tc">Airflow</span><span class="tc">Unity Catalog</span>
+          <span class="tc">Azure</span><span class="tc">GCP</span><span class="tc">AWS</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hr">
+      <div class="hr-lbl">// Live pipeline — CVS Health platform</div>
+      <div id="pviz">
+        <svg width="100%" viewBox="0 0 460 370" role="img">
+          <title>Real-time data pipeline architecture</title>
+          <defs>
+            <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+              <path d="M2 1L8 5L2 9" fill="none" stroke="#00CCE8" stroke-width="1.5" stroke-linecap="round"/>
+            </marker>
+          </defs>
+
+          <!-- KAFKA -->
+          <rect x="12" y="12" width="100" height="56" rx="4" fill="#0B1523" stroke="#00CCE8" stroke-width="1"/>
+          <text x="62" y="33" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#00CCE8" font-weight="500">Kafka</text>
+          <text x="62" y="48" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="#2C4C62">KStreams</text>
+          <circle cx="62" cy="60" r="3" fill="#00DE9A"><animate attributeName="r" values="3;5;3" dur="1.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;.3;1" dur="1.8s" repeatCount="indefinite"/></circle>
+
+          <line x1="114" y1="40" x2="140" y2="40" stroke="#00CCE8" stroke-width=".8" stroke-dasharray="4 3" marker-end="url(#arr)"><animate attributeName="stroke-dashoffset" values="14;0" dur="1s" repeatCount="indefinite"/></line>
+
+          <!-- FLINK -->
+          <rect x="142" y="12" width="100" height="56" rx="4" fill="#0B1523" stroke="#2C4C62" stroke-width=".8"/>
+          <text x="192" y="33" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#6A94B0">Flink</text>
+          <text x="192" y="48" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="#2C4C62">Stateful · 1×</text>
+
+          <line x1="244" y1="40" x2="270" y2="40" stroke="#00CCE8" stroke-width=".8" stroke-dasharray="4 3" marker-end="url(#arr)"><animate attributeName="stroke-dashoffset" values="14;0" dur="1.2s" repeatCount="indefinite"/></line>
+
+          <!-- DLT -->
+          <rect x="272" y="12" width="100" height="56" rx="4" fill="#0B1523" stroke="#2C4C62" stroke-width=".8"/>
+          <text x="322" y="33" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#6A94B0">DLT</text>
+          <text x="322" y="48" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="#2C4C62">Bronze → Silver</text>
+
+          <line x1="372" y1="40" x2="398" y2="40" stroke="#00CCE8" stroke-width=".8" stroke-dasharray="4 3" marker-end="url(#arr)"><animate attributeName="stroke-dashoffset" values="14;0" dur="1.4s" repeatCount="indefinite"/></line>
+
+          <!-- DBT -->
+          <rect x="400" y="12" width="54" height="56" rx="4" fill="#0B1523" stroke="#2C4C62" stroke-width=".8"/>
+          <text x="427" y="33" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#6A94B0">dbt</text>
+          <text x="427" y="47" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="#2C4C62">50+ mdls</text>
+
+          <!-- DOWN ARROW from DLT to Unity -->
+          <line x1="322" y1="70" x2="322" y2="100" stroke="#2C4C62" stroke-width=".8" marker-end="url(#arr)"/>
+          <!-- DOWN ARROW from dbt to Snowflake -->
+          <line x1="427" y1="70" x2="427" y2="100" stroke="#2C4C62" stroke-width=".8" marker-end="url(#arr)"/>
+
+          <!-- UNITY CATALOG -->
+          <rect x="142" y="102" width="230" height="48" rx="4" fill="#0B1523" stroke="#2C4C62" stroke-width=".8"/>
+          <text x="257" y="122" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#6A94B0">Unity Catalog</text>
+          <text x="257" y="137" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="#2C4C62">HIPAA · Column masking · Row-level security</text>
+
+          <!-- SNOWFLAKE -->
+          <rect x="380" y="102" width="74" height="48" rx="4" fill="#0B1523" stroke="#2C4C62" stroke-width=".8"/>
+          <text x="417" y="122" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#6A94B0">Snowflake</text>
+          <text x="417" y="136" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="#2C4C62">Analytical DW</text>
+
+          <!-- AIRFLOW bar -->
+          <rect x="12" y="174" width="442" height="36" rx="4" fill="#0F1C2C" stroke="#1C3348" stroke-width=".8"/>
+          <text x="233" y="196" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#2C4C62">Apache Airflow · Orchestration · Slack alerts · dbt operators</text>
+
+          <!-- MLFLOW bar -->
+          <rect x="12" y="218" width="442" height="36" rx="4" fill="#0F1C2C" stroke="#1C3348" stroke-width=".8"/>
+          <text x="233" y="240" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#2C4C62">MLflow · Pipeline metrics · Data quality artifacts · Audit trail</text>
+
+          <!-- TERRAFORM / GIT bar -->
+          <rect x="12" y="262" width="442" height="36" rx="4" fill="#0F1C2C" stroke="#1C3348" stroke-width=".8"/>
+          <text x="233" y="284" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#2C4C62">Terraform IaC · GitHub Actions CI/CD · Databricks Workspace deploy</text>
+
+          <!-- BADGES -->
+          <rect x="12" y="316" width="110" height="22" rx="3" fill="rgba(0,204,232,.07)" stroke="rgba(0,204,232,.18)" stroke-width=".8"/>
+          <text x="67" y="331" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#00CCE8">&lt;500ms latency</text>
+
+          <rect x="130" y="316" width="100" height="22" rx="3" fill="rgba(0,222,154,.06)" stroke="rgba(0,222,154,.18)" stroke-width=".8"/>
+          <text x="180" y="331" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#00DE9A">99.3% uptime</text>
+
+          <rect x="238" y="316" width="106" height="22" rx="3" fill="rgba(155,111,255,.06)" stroke="rgba(155,111,255,.18)" stroke-width=".8"/>
+          <text x="291" y="331" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#9B6FFF">10K events/sec</text>
+
+          <rect x="352" y="316" width="102" height="22" rx="3" fill="rgba(240,165,0,.06)" stroke="rgba(240,165,0,.18)" stroke-width=".8"/>
+          <text x="403" y="331" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#F0A500">50+ dbt models</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- METRICS -->
+  <div class="ms">
+    <div class="mi r"><span class="mv" data-val="95" data-suf="TB+">95TB+</span><span class="ml">Data Migrated</span></div>
+    <div class="mi r"><span class="mv" data-val="50" data-suf="+">50+</span><span class="ml">dbt Models</span></div>
+    <div class="mi r"><span class="mv" data-val="10" data-suf="K/s">10K/s</span><span class="ml">Events/Sec</span></div>
+    <div class="mi r"><span class="mv" data-val="27" data-suf="K">$27K</span><span class="ml">Saved/Month</span></div>
+    <div class="mi r"><span class="mv" data-val="99.3" data-suf="%">99.3%</span><span class="ml">Pipeline Uptime</span></div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <section class="sec">
+    <div class="sh r"><span class="sn">02</span><h2 class="st">Engineered Impact</h2></div>
+    <div class="ecards">
+      <div class="ec r">
+        <span class="etag">Jan 2024 – Present</span>
+        <h3 class="etitle">Healthcare Analytics Platform</h3>
+        <div class="eco">CVS Health · Senior Data Engineer · Remote, USA</div>
+        <ul class="ebs">
+          <li>50+ dbt Core models — incremental merge, Z-order clustering, source freshness — <strong>60% runtime reduction, $12K/month savings</strong></li>
+          <li>Kafka + Spark Structured Streaming: <strong>10K+ pharmacy events/sec at &lt;500ms</strong>, real-time stockout prevention saving $15K/month</li>
+          <li>Delta Live Tables with DQ expectations + Unity Catalog HIPAA governance — column masking, row-level security across <strong>20+ teams</strong></li>
+          <li>MLflow audit trail for clinical data science; <strong>50% MTTR reduction</strong> via dbt tests + Great Expectations</li>
+          <li>Collaborated with business stakeholders and analytics teams to translate reporting requirements into dbt mart models</li>
+        </ul>
+        <div class="emets">
+          <div class="em"><span class="emv">60%</span><span class="emk">Runtime cut</span></div>
+          <div class="em"><span class="emv">$12K</span><span class="emk">Saved/month</span></div>
+          <div class="em"><span class="emv">50%</span><span class="emk">MTTR drop</span></div>
+        </div>
+      </div>
+      <div class="ec r">
+        <span class="etag">Jan 2020 – Aug 2022</span>
+        <h3 class="etitle">E-Commerce Lakehouse · GCP + Azure</h3>
+        <div class="eco">eBay · Data Engineer · Bengaluru, India</div>
+        <ul class="ebs">
+          <li>GCP Dataflow (Apache Beam): Pub/Sub → BigQuery, <strong>1.4B+ monthly marketplace events</strong>, sub-minute data freshness</li>
+          <li>Snowflake migration: <strong>8 source systems, 95TB+, zero data loss</strong> — 36% query efficiency gain, 37% batch cost reduction</li>
+          <li>Medallion lakehouse on Azure Databricks: reliability <strong>91% → 99.3%</strong>, $85K/year storage savings via Delta Lake CDC MERGE</li>
+          <li>Terraform + GitHub Actions CI/CD — <strong>90% faster deployments</strong>; presented migration progress to senior engineering stakeholders</li>
+        </ul>
+        <div class="emets">
+          <div class="em"><span class="emv">95TB</span><span class="emk">Migrated</span></div>
+          <div class="em"><span class="emv">$85K</span><span class="emk">Saved/year</span></div>
+          <div class="em"><span class="emv">36%</span><span class="emk">Query speedup</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLS DEEP DIVE -->
+  <section class="tsec">
+    <div class="tsec-inner r">
+      <h3 class="tsec-title">Full Technical Stack</h3>
+      <p class="tsec-sub">Hands-on production experience across every layer of the modern data stack — from infrastructure-as-code to business-facing dashboards, and every pipeline stage in between.</p>
+      <div class="tgrid">
+        <div class="tcat">
+          <div class="tcat-title">// Infra & DevOps</div>
+          <div class="tcat-items">
+            <span class="tcat-item hi">Terraform</span>
+            <span class="tcat-item hi">GitHub Actions CI/CD</span>
+            <span class="tcat-item hi">Git · GitHub</span>
+            <span class="tcat-item">Docker</span>
+            <span class="tcat-item">Kubernetes (EKS)</span>
+            <span class="tcat-item">Helm</span>
+          </div>
+        </div>
+        <div class="tcat">
+          <div class="tcat-title">// Lakehouse & DW</div>
+          <div class="tcat-items">
+            <span class="tcat-item hi">Databricks</span>
+            <span class="tcat-item hi">Snowflake</span>
+            <span class="tcat-item hi">Delta Lake · DLT</span>
+            <span class="tcat-item hi">Unity Catalog</span>
+            <span class="tcat-item">BigQuery</span>
+            <span class="tcat-item">Redshift · Synapse</span>
+          </div>
+        </div>
+        <div class="tcat">
+          <div class="tcat-title">// Transform & Orch</div>
+          <div class="tcat-items">
+            <span class="tcat-item hi">dbt Core</span>
+            <span class="tcat-item">Apache Airflow</span>
+            <span class="tcat-item">Dagster</span>
+            <span class="tcat-item">Azure Data Factory</span>
+            <span class="tcat-item">AWS Glue</span>
+            <span class="tcat-item">Great Expectations</span>
+          </div>
+        </div>
+        <div class="tcat">
+          <div class="tcat-title">// Streaming & GenAI</div>
+          <div class="tcat-items">
+            <span class="tcat-item hi">Apache Kafka</span>
+            <span class="tcat-item hi">Apache Flink</span>
+            <span class="tcat-item">Spark Streaming</span>
+            <span class="tcat-item">AWS Bedrock</span>
+            <span class="tcat-item">LangChain · pgvector</span>
+            <span class="tcat-item">MLflow</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAKEHOLDER CALLOUT -->
+  <div class="scallout r">
+    <div class="sc-label">// Business Partnership</div>
+    <p class="sc-text">"Beyond the pipelines — I partner directly with business stakeholders to translate reporting requirements into scalable data models, present migration progress to senior leadership, and mentor engineering teams on data platform best practices."</p>
+    <div class="sc-items">
+      <span class="sc-tag">Requirements gathering</span>
+      <span class="sc-tag">Stakeholder presentations</span>
+      <span class="sc-tag">Cross-team collaboration</span>
+      <span class="sc-tag">Engineering mentorship</span>
+      <span class="sc-tag">Data strategy</span>
+    </div>
+  </div>
+
+</div><!-- /home -->
+
+<!-- ══════════════════════ PROJECTS ══════════════════════ -->
+<div class="page" id="projects">
+  <div class="sh r"><span class="sn">02</span><h2 class="st">Projects</h2></div>
+  <p class="r" style="color:var(--t2);font-size:12px;max-width:520px;margin-top:8px">Personal builds and enterprise work — real code, real metrics, real architecture.</p>
+  <div class="pgrid">
+
+    <div class="pc r">
+      <span class="pnum">PROJECT_01 / 2025 / Personal</span>
+      <h3 class="pname">Real-Time Lakehouse: Kafka + Flink + DLT + dbt</h3>
+      <p class="psub">Streaming · Exactly-Once · Databricks · Airflow</p>
+      <p class="pdesc">Kafka producers → Apache Flink stateful processing with exactly-once semantics → Databricks DLT (Bronze/Silver) → dbt Gold marts. Airflow DAGs with Slack alerting. MLflow data quality artifacts. Terraform-provisioned infrastructure on Azure. GitHub Actions CI/CD for dbt model promotion.</p>
+      <div class="arch">
+        <div class="albl">// Architecture</div>
+        <svg width="100%" viewBox="0 0 420 48" role="img"><title>Project 1 pipeline</title>
+          <defs><marker id="a1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M2 1L8 5L2 9" fill="none" stroke="#00CCE8" stroke-width="1.5" stroke-linecap="round"/></marker></defs>
+          <rect x="0" y="6" width="68" height="34" rx="3" fill="#0B1523" stroke="#00CCE8" stroke-width=".8"/>
+          <text x="34" y="27" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#00CCE8">Kafka</text>
+          <line x1="70" y1="23" x2="88" y2="23" stroke="#00CCE8" stroke-width=".8" marker-end="url(#a1)"/>
+          <rect x="90" y="6" width="68" height="34" rx="3" fill="#0B1523" stroke="#2C4C62" stroke-width=".8"/>
+          <text x="124" y="27" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#6A94B0">Flink</text>
+          <line x1="160" y1="23" x2="178" y2="23" stroke="#00CCE8" stroke-width=".8" marker-end="url(#a1)"/>
+          <rect x="180" y="6" width="68" height="34" rx="3" fill="#0B1523" stroke="#2C4C62" stroke-width=".8"/>
+          <text x="214" y="21" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#6A94B0">DLT</text>
+          <text x="214" y="33" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#2C4C62">Brnz→Slvr</text>
+          <line x1="250" y1="23" x2="268" y2="23" stroke="#00CCE8" stroke-width=".8" marker-end="url(#a1)"/>
+          <rect x="270" y="6" width="68" height="34" rx="3" fill="#0B1523" stroke="#2C4C62" stroke-width=".8"/>
+          <text x="304" y="21" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#6A94B0">dbt Core</text>
+          <text x="304" y="33" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#2C4C62">Gold Marts</text>
+          <line x1="340" y1="23" x2="358" y2="23" stroke="#00CCE8" stroke-width=".8" marker-end="url(#a1)"/>
+          <rect x="360" y="6" width="58" height="34" rx="3" fill="#0B1523" stroke="#2C4C62" stroke-width=".8"/>
+          <text x="389" y="27" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#6A94B0">Dashboards</text>
+        </svg>
+      </div>
+      <div class="pst">
+        <div class="psti"><span class="pstv">&lt;200ms</span><span class="pstk">E2E Latency</span></div>
+        <div class="psti"><span class="pstv">15K/s</span><span class="pstk">Events</span></div>
+        <div class="psti"><span class="pstv">99.7%</span><span class="pstk">DLT Quality</span></div>
+        <div class="psti"><span class="pstv">1×</span><span class="pstk">Exactly-Once</span></div>
+      </div>
+      <div class="ptags"><span class="ptag">Kafka</span><span class="ptag">Flink</span><span class="ptag">Databricks</span><span class="ptag">DLT</span><span class="ptag">dbt Core</span><span class="ptag">Airflow</span><span class="ptag">MLflow</span><span class="ptag">Terraform</span><span class="ptag">GitHub Actions</span></div>
+      <a class="plink" href="https://github.com/ManiRukki/streaming_event_pipeline" target="_blank" rel="noopener">View on GitHub →</a>
+    </div>
+
+    <div class="pc r">
+      <span class="pnum">PROJECT_02 / 2025 / Personal</span>
+      <h3 class="pname">GenAI Feature Pipeline: BigQuery + dbt + AWS Bedrock</h3>
+      <p class="psub">GenAI · RAG · HIPAA-Aligned · pgvector</p>
+      <p class="pdesc">HIPAA-aligned GenAI feature store on GCP BigQuery. dbt incremental models for document metadata, embedding tracking, and retrieval analytics. AWS Bedrock Titan embeddings → pgvector semantic search. FastAPI RAG endpoint. MLflow audit trail. PII de-identification via dbt pre-hooks. Airflow orchestration. Terraform-provisioned infra.</p>
+      <div class="arch">
+        <div class="albl">// Architecture</div>
+        <svg width="100%" viewBox="0 0 420 48" role="img"><title>Project 2 pipeline</title>
+          <defs><marker id="a2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M2 1L8 5L2 9" fill="none" stroke="#00CCE8" stroke-width="1.5" stroke-linecap="round"/></marker></defs>
+          <rect x="0" y="6" width="68" height="34" rx="3" fill="#0B1523" stroke="#00CCE8" stroke-width=".8"/>
+          <text x="34" y="21" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#00CCE8">GCS Docs</text>
+          <text x="34" y="33" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#2C4C62">Raw landing</text>
+          <line x1="70" y1="23" x2="88" y2="23" stroke="#00CCE8" stroke-width=".8" marker-end="url(#a2)"/>
+          <rect x="90" y="6" width="68" height="34" rx="3" fill="#0B1523" stroke="#2C4C62" stroke-width=".8"/>
+          <text x="124" y="21" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#6A94B0">BigQuery</text>
+          <text x="124" y="33" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#2C4C62">dbt features</text>
+          <line x1="160" y1="23" x2="178" y2="23" stroke="#00CCE8" stroke-width=".8" marker-end="url(#a2)"/>
+          <rect x="180" y="6" width="68" height="34" rx="3" fill="#0B1523" stroke="#2C4C62" stroke-width=".8"/>
+          <text x="214" y="21" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#6A94B0">Bedrock</text>
+          <text x="214" y="33" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#2C4C62">Embeddings</text>
+          <line x1="250" y1="23" x2="268" y2="23" stroke="#00CCE8" stroke-width=".8" marker-end="url(#a2)"/>
+          <rect x="270" y="6" width="68" height="34" rx="3" fill="#0B1523" stroke="#2C4C62" stroke-width=".8"/>
+          <text x="304" y="21" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#6A94B0">pgvector</text>
+          <text x="304" y="33" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#2C4C62">Similarity</text>
+          <line x1="340" y1="23" x2="358" y2="23" stroke="#00CCE8" stroke-width=".8" marker-end="url(#a2)"/>
+          <rect x="360" y="6" width="58" height="34" rx="3" fill="#0B1523" stroke="#2C4C62" stroke-width=".8"/>
+          <text x="389" y="27" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#6A94B0">FastAPI RAG</text>
+        </svg>
+      </div>
+      <div class="pst">
+        <div class="psti"><span class="pstv">&lt;50ms</span><span class="pstk">Vector Search</span></div>
+        <div class="psti"><span class="pstv">500/min</span><span class="pstk">Embeddings</span></div>
+        <div class="psti"><span class="pstv">HIPAA</span><span class="pstk">Compliant</span></div>
+        <div class="psti"><span class="pstv">100%</span><span class="pstk">PII Masked</span></div>
+      </div>
+      <div class="ptags"><span class="ptag">BigQuery</span><span class="ptag">dbt Core</span><span class="ptag">AWS Bedrock</span><span class="ptag">pgvector</span><span class="ptag">FastAPI</span><span class="ptag">MLflow</span><span class="ptag">Airflow</span><span class="ptag">Terraform</span></div>
+      <a class="plink" href="https://github.com/ManiRukki/realtime_ml_feature_store" target="_blank" rel="noopener">View on GitHub →</a>
+    </div>
+
+    <div class="pc r">
+      <span class="pnum">PROJECT_03 / CVS Health · 2024–Present</span>
+      <h3 class="pname">Healthcare Analytics Platform (CVS Health)</h3>
+      <p class="psub">HIPAA · Delta Live Tables · Unity Catalog · Snowflake</p>
+      <p class="pdesc">HIPAA-compliant platform: Kafka + Spark Structured Streaming at 10K+ events/sec. 50+ dbt Core models with incremental merge, Z-order clustering. Unity Catalog column masking + row-level security. Real-time stockout risk scoring preventing 1,200+ incidents/month. Snowflake as analytical DW. Presented platform architecture to business stakeholders.</p>
+      <div class="arch">
+        <div class="albl">// Architecture</div>
+        <svg width="100%" viewBox="0 0 420 48" role="img"><title>Project 3 pipeline</title>
+          <defs><marker id="a3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M2 1L8 5L2 9" fill="none" stroke="#00CCE8" stroke-width="1.5" stroke-linecap="round"/></marker></defs>
+          <rect x="0" y="6" width="68" height="34" rx="3" fill="#0B1523" stroke="#00CCE8" stroke-width=".8"/>
+          <text x="34" y="21" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#00CCE8">Kafka</text>
+          <text x="34" y="33" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#2C4C62">10K+ events/s</text>
+          <line x1="70" y1="23" x2="88" y2="23" stroke="#00CCE8" stroke-width=".8" marker-end="url(#a3)"/>
+          <rect x="90" y="6" width="68" height="34" rx="3" fill="#0B1523" stroke="#2C4C62" stroke-width=".8"/>
+          <text x="124" y="21" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#6A94B0">DLT</text>
+          <text x="124" y="33" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#2C4C62">Brnz→Slvr</text>
+          <line x1="160" y1="23" x2="178" y2="23" stroke="#00CCE8" stroke-width=".8" marker-end="url(#a3)"/>
+          <rect x="180" y="6" width="68" height="34" rx="3" fill="#0B1523" stroke="#2C4C62" stroke-width=".8"/>
+          <text x="214" y="21" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#6A94B0">dbt Core</text>
+          <text x="214" y="33" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#2C4C62">50+ models</text>
+          <line x1="250" y1="23" x2="268" y2="23" stroke="#00CCE8" stroke-width=".8" marker-end="url(#a3)"/>
+          <rect x="270" y="6" width="68" height="34" rx="3" fill="#0B1523" stroke="#2C4C62" stroke-width=".8"/>
+          <text x="304" y="21" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#6A94B0">Unity Cat.</text>
+          <text x="304" y="33" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#2C4C62">HIPAA Gov.</text>
+          <line x1="340" y1="23" x2="358" y2="23" stroke="#00CCE8" stroke-width=".8" marker-end="url(#a3)"/>
+          <rect x="360" y="6" width="58" height="34" rx="3" fill="#0B1523" stroke="#2C4C62" stroke-width=".8"/>
+          <text x="389" y="27" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#6A94B0">Snowflake</text>
+        </svg>
+      </div>
+      <div class="pst">
+        <div class="psti"><span class="pstv">10K/s</span><span class="pstk">Events</span></div>
+        <div class="psti"><span class="pstv">$12K</span><span class="pstk">Saved/mo</span></div>
+        <div class="psti"><span class="pstv">50+</span><span class="pstk">dbt Models</span></div>
+        <div class="psti"><span class="pstv">50%</span><span class="pstk">MTTR Drop</span></div>
+      </div>
+      <div class="ptags"><span class="ptag">Azure Databricks</span><span class="ptag">dbt Core</span><span class="ptag">DLT</span><span class="ptag">Unity Catalog</span><span class="ptag">Kafka</span><span class="ptag">Snowflake</span><span class="ptag">Airflow</span><span class="ptag">Power BI</span></div>
+      <a class="plink" href="https://github.com/ManiRukki/customer-analytics-platform" target="_blank" rel="noopener">View on GitHub →</a>
+    </div>
+
+    <div class="pc r">
+      <span class="pnum">PROJECT_04 / eBay · 2020–2022</span>
+      <h3 class="pname">Enterprise Snowflake Lakehouse Migration (eBay)</h3>
+      <p class="psub">95TB · 8 Sources · Zero Data Loss · Terraform · dbt</p>
+      <p class="pdesc">Migrated 8 heterogeneous source systems (95TB+) to unified Snowflake lakehouse — zero data loss. dbt Core transformation layer: staging, intermediate, mart models, custom macros, test coverage. Snowpark reconciliation validator. Terraform-provisioned Snowflake environments. GitHub Actions CI/CD cut deployment 90%. Presented migration progress to senior engineering leadership.</p>
+      <div class="arch">
+        <div class="albl">// Architecture</div>
+        <svg width="100%" viewBox="0 0 420 48" role="img"><title>Project 4 pipeline</title>
+          <defs><marker id="a4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M2 1L8 5L2 9" fill="none" stroke="#00CCE8" stroke-width="1.5" stroke-linecap="round"/></marker></defs>
+          <rect x="0" y="6" width="68" height="34" rx="3" fill="#0B1523" stroke="#00CCE8" stroke-width=".8"/>
+          <text x="34" y="21" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#00CCE8">8 Sources</text>
+          <text x="34" y="33" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#2C4C62">95TB total</text>
+          <line x1="70" y1="23" x2="88" y2="23" stroke="#00CCE8" stroke-width=".8" marker-end="url(#a4)"/>
+          <rect x="90" y="6" width="68" height="34" rx="3" fill="#0B1523" stroke="#2C4C62" stroke-width=".8"/>
+          <text x="124" y="21" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#6A94B0">ADF + ADLS</text>
+          <text x="124" y="33" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#2C4C62">Extract+Land</text>
+          <line x1="160" y1="23" x2="178" y2="23" stroke="#00CCE8" stroke-width=".8" marker-end="url(#a4)"/>
+          <rect x="180" y="6" width="68" height="34" rx="3" fill="#0B1523" stroke="#2C4C62" stroke-width=".8"/>
+          <text x="214" y="21" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#6A94B0">dbt Core</text>
+          <text x="214" y="33" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#2C4C62">RAW→MART</text>
+          <line x1="250" y1="23" x2="268" y2="23" stroke="#00CCE8" stroke-width=".8" marker-end="url(#a4)"/>
+          <rect x="270" y="6" width="68" height="34" rx="3" fill="#0B1523" stroke="#2C4C62" stroke-width=".8"/>
+          <text x="304" y="21" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#6A94B0">Snowflake</text>
+          <text x="304" y="33" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#2C4C62">Lakehouse</text>
+          <line x1="340" y1="23" x2="358" y2="23" stroke="#00CCE8" stroke-width=".8" marker-end="url(#a4)"/>
+          <rect x="360" y="6" width="58" height="34" rx="3" fill="#0B1523" stroke="#2C4C62" stroke-width=".8"/>
+          <text x="389" y="27" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#6A94B0">Power BI</text>
+        </svg>
+      </div>
+      <div class="pst">
+        <div class="psti"><span class="pstv">95TB+</span><span class="pstk">Migrated</span></div>
+        <div class="psti"><span class="pstv">36%</span><span class="pstk">Query Speed</span></div>
+        <div class="psti"><span class="pstv">$85K</span><span class="pstk">Saved/yr</span></div>
+        <div class="psti"><span class="pstv">0</span><span class="pstk">Data Loss</span></div>
+      </div>
+      <div class="ptags"><span class="ptag">Snowflake</span><span class="ptag">dbt Core</span><span class="ptag">Snowpark</span><span class="ptag">Airflow</span><span class="ptag">ADF</span><span class="ptag">BigQuery</span><span class="ptag">Terraform</span><span class="ptag">GitHub Actions</span></div>
+      <a class="plink" href="https://github.com/ManiRukki/entireprise_data_warehouse" target="_blank" rel="noopener">View on GitHub →</a>
+    </div>
+
+  </div>
 </div>
-<p class="font-headline text-2xl md:text-3xl text-secondary max-w-2xl leading-relaxed">
-                    Building Scalable Data Ecosystems for the next generation of intelligence.
-                </p>
-<p class="text-on-surface-variant text-lg max-w-xl leading-relaxed">
-                    Specializing in high-throughput ETL pipelines and distributed systems architecture. I transform raw technical complexity into elegant, resilient data infrastructure that scales with your ambition.
-                </p>
-<div class="flex flex-wrap gap-4 pt-4">
-<button class="bg-primary text-on-primary font-headline font-bold px-8 py-4 rounded-sm flex items-center gap-2 glow transition-all duration-300 uppercase tracking-wider text-sm">
-                        View Projects
-                        <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
-</button>
-<button class="border border-outline-variant/15 text-secondary font-headline px-8 py-4 rounded-sm hover:bg-surface-container-low transition-all duration-300 uppercase tracking-wider text-sm">
-                        Download CV
-                    </button>
+
+<!-- ══════════════════════ ABOUT ══════════════════════ -->
+<div class="page" id="about">
+  <div class="sh r"><span class="sn">03</span><h2 class="st">About</h2></div>
+  <div class="agrid">
+    <div>
+      <p class="aintro r">I build the infrastructure that makes data move — fast, reliably, at a scale that actually matters.</p>
+      <p class="abody r">Senior Data Engineer with 5+ years architecting lakehouse platforms, real-time streaming pipelines, and enterprise data migrations. Currently at CVS Health building HIPAA-compliant healthcare analytics on Azure Databricks. Previously at eBay processing 1.4B+ monthly marketplace events on GCP and Azure.</p>
+      <p class="abody r">My core identity is building at the intersection of streaming, data modeling, and infrastructure. I work daily with Databricks, Snowflake, dbt, Terraform, Git/GitHub, and Apache Kafka — and I care about the full lifecycle from infrastructure-as-code to business-facing dashboards. I've presented architecture decisions and migration progress directly to business stakeholders and engineering leadership.</p>
+      <p class="abody r">M.S. Computer Science, Rowan University (2024). Open to senior and staff data engineering roles — full-time and contract, remote and hybrid.</p>
+      <div class="tl">
+        <div class="tl-title">// Career Progression</div>
+        <div class="te r">
+          <div class="ty">2024 → Now</div>
+          <div class="tr">
+            <div class="tco">CVS Health</div>
+            <div class="trole">Senior Data Engineer · Remote, USA</div>
+            <ul class="tbs">
+              <li>50+ dbt Core models — 60% pipeline runtime reduction, $12K/month savings</li>
+              <li>Kafka + Structured Streaming: 10K+ events/sec, &lt;500ms latency</li>
+              <li>Unity Catalog HIPAA governance across 20+ teams</li>
+              <li>Collaborated with business stakeholders on reporting requirements</li>
+            </ul>
+          </div>
+        </div>
+        <div class="te r">
+          <div class="ty">2023–2024</div>
+          <div class="tr">
+            <div class="tco">Rowan University</div>
+            <div class="trole">M.S. Computer Science · Glassboro, NJ</div>
+            <ul class="tbs">
+              <li>Graduate research in distributed systems</li>
+              <li>Capstone: Kafka + Flink + Databricks streaming platform</li>
+            </ul>
+          </div>
+        </div>
+        <div class="te r">
+          <div class="ty">2020–2022</div>
+          <div class="tr">
+            <div class="tco">eBay</div>
+            <div class="trole">Data Engineer · Bengaluru, India</div>
+            <ul class="tbs">
+              <li>GCP Dataflow: Pub/Sub → BigQuery, 1.4B+ events/month</li>
+              <li>Snowflake migration: 8 sources, 95TB+, zero data loss</li>
+              <li>Medallion lakehouse: reliability 91% → 99.3%</li>
+              <li>Presented migration progress to senior engineering leadership</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="aside">
+      <div class="sg r"><div class="sgtl">// Infra & DevOps</div><div class="stags"><span class="stag">Terraform</span><span class="stag">GitHub Actions</span><span class="stag">Git · GitHub</span><span class="stag">Docker</span><span class="stag">Kubernetes</span></div></div>
+      <div class="sg r"><div class="sgtl">// Lakehouse & DW</div><div class="stags"><span class="stag">Databricks</span><span class="stag">Snowflake</span><span class="stag">Delta Lake</span><span class="stag">DLT</span><span class="stag">Unity Catalog</span><span class="stag">BigQuery</span><span class="stag">Redshift</span></div></div>
+      <div class="sg r"><div class="sgtl">// Streaming</div><div class="stags"><span class="stag">Apache Kafka</span><span class="stag">Apache Flink</span><span class="stag">Spark Streaming</span><span class="stag">Dataflow</span><span class="stag">Kinesis</span></div></div>
+      <div class="sg r"><div class="sgtl">// Transform & Orch</div><div class="stags"><span class="stag">dbt Core</span><span class="stag">Airflow</span><span class="stag">Dagster</span><span class="stag">ADF</span><span class="stag">AWS Glue</span></div></div>
+      <div class="sg r"><div class="sgtl">// Languages</div><div class="stags"><span class="stag">Python</span><span class="stag">PySpark</span><span class="stag">SQL</span><span class="stag">Scala</span><span class="stag">Bash</span></div></div>
+      <div style="margin-top:1px">
+        <div style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--t3);padding:16px 20px 12px">// Certifications</div>
+        <div class="cb r"><span class="cn">AWS Cloud Practitioner</span><span class="cs ok">Apr 2025 ✓</span></div>
+        <div class="cb r"><span class="cn">AWS Solutions Architect Assoc.</span><span class="cs ip">In Progress</span></div>
+        <div class="cb r"><span class="cn">Databricks Data Engineer Assoc.</span><span class="cs ip">In Progress</span></div>
+        <div class="cb r"><span class="cn">GCP Professional Data Engineer</span><span class="cs ip">Planned</span></div>
+      </div>
+    </div>
+  </div>
 </div>
-<!-- Technical Specs / Skills Chips -->
-<div class="pt-12 flex flex-col gap-4">
-<span class="font-label text-[10px] tracking-widest text-secondary/60 uppercase">Core Stack Infrastructure</span>
-<div class="flex flex-wrap gap-3">
-<div class="px-4 py-2 border border-outline-variant/15 rounded-sm font-label text-xs text-on-surface-variant hover:bg-primary-container/30 transition-all cursor-default">PYTHON</div>
-<div class="px-4 py-2 border border-outline-variant/15 rounded-sm font-label text-xs text-on-surface-variant hover:bg-primary-container/30 transition-all cursor-default">PYSPARK</div>
-<div class="px-4 py-2 border border-outline-variant/15 rounded-sm font-label text-xs text-on-surface-variant hover:bg-primary-container/30 transition-all cursor-default">DATABRICKS</div>
-<div class="px-4 py-2 border border-outline-variant/15 rounded-sm font-label text-xs text-on-surface-variant hover:bg-primary-container/30 transition-all cursor-default">AWS CLOUD</div>
-<div class="px-4 py-2 border border-outline-variant/15 rounded-sm font-label text-xs text-on-surface-variant hover:bg-primary-container/30 transition-all cursor-default">KAFKA</div>
-<div class="px-4 py-2 border border-outline-variant/15 rounded-sm font-label text-xs text-on-surface-variant hover:bg-primary-container/30 transition-all cursor-default">SNOWFLAKE</div>
+
+<!-- ══════════════════════ CONTACT ══════════════════════ -->
+<div class="page" id="contact">
+  <div class="sh r"><span class="sn">04</span><h2 class="st">Contact</h2></div>
+  <div class="cgrid">
+    <div>
+      <p class="cintro r">Let's build something that moves data at the speed your business demands.</p>
+      <div class="cinfo">
+        <div class="ci r"><div class="cion">@</div><div><div class="clbl">Email</div><a class="cval" href="mailto:manikolipar@gmail.com">manikolipar@gmail.com</a></div></div>
+        <div class="ci r"><div class="cion">☎</div><div><div class="clbl">Phone</div><a class="cval" href="tel:+18562195618">+1 (856) 219-5618</a></div></div>
+        <div class="ci r"><div class="cion">in</div><div><div class="clbl">LinkedIn</div><a class="cval" href="https://www.linkedin.com/in/mani-vaibhav-k-286ba3354" target="_blank" rel="noopener">linkedin.com/in/mani-vaibhav-k-286ba3354</a></div></div>
+        <div class="ci r"><div class="cion">&lt;/&gt;</div><div><div class="clbl">GitHub</div><a class="cval" href="https://github.com/ManiRukki" target="_blank" rel="noopener">github.com/ManiRukki</a></div></div>
+        <div class="ci r"><div class="cion">⌖</div><div><div class="clbl">Location</div><span class="cval">New Jersey · Remote &amp; Hybrid</span></div></div>
+      </div>
+    </div>
+    <div class="form r">
+      <div style="font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--t3);margin-bottom:18px">// Send a Message</div>
+      <div><label class="flbl" for="fn">Name</label><input class="fin" type="text" id="fn" placeholder="Your name" autocomplete="name"/></div>
+      <div><label class="flbl" for="fe">Email</label><input class="fin" type="email" id="fe" placeholder="your@email.com" autocomplete="email"/></div>
+      <div><label class="flbl" for="fs">Subject</label><input class="fin" type="text" id="fs" placeholder="Role / Opportunity / Collaboration"/></div>
+      <div><label class="flbl" for="fm">Message</label><textarea class="fta" id="fm" placeholder="Tell me about the role or project..."></textarea></div>
+      <button class="fsub" onclick="sendMsg()">Send Message →</button>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-<!-- Right Column: Technical Metadata / Gutter (30% + 10% Gutter) -->
-<div class="lg:col-span-4 lg:col-start-9 flex flex-col gap-12">
-<!-- System Status Module -->
-<div class="bg-surface-container-low p-6 border-l-2 border-primary relative overflow-hidden group">
-<div class="absolute top-0 right-0 p-2 opacity-10 group-hover:opacity-20 transition-opacity">
-<span class="material-symbols-outlined text-4xl" data-icon="database">database</span>
-</div>
-<h3 class="font-label text-[10px] tracking-widest text-secondary uppercase mb-6">Current Build Status</h3>
-<div class="space-y-4">
-<div class="flex justify-between items-center">
-<span class="font-label text-xs text-on-surface-variant/70">DEPLOYMENT_READY</span>
-<span class="text-[10px] font-mono text-primary">v2.4.0_LATEST</span>
-</div>
-<div class="w-full h-[1px] bg-outline-variant/10"></div>
-<div class="flex justify-between items-center">
-<span class="font-label text-xs text-on-surface-variant/70">LATENCY_OPTIMIZATION</span>
-<span class="text-[10px] font-mono text-secondary">ACTIVE</span>
-</div>
-<div class="w-full h-[1px] bg-outline-variant/10"></div>
-<div class="flex justify-between items-center">
-<span class="font-label text-xs text-on-surface-variant/70">REGION</span>
-<span class="text-[10px] font-mono text-secondary">US-EAST-1</span>
-</div>
-</div>
-</div>
-<!-- Abstract Visual Anchor -->
-<div class="aspect-square bg-surface-container border border-outline-variant/15 relative overflow-hidden group">
-<img alt="Cybersecurity and code" class="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-60 transition-all duration-700" data-alt="Abstract macro shot of a server rack with blue and cyan led lights reflecting on metallic surfaces in a dark room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcLmwONxYLQJhqUn6lCIIEQ_o7NFzc7BZXEg6OqQ86F135Zv6SItOmms5uPCRZvd6dJSiyPOR31CCiJ-h3bAcWSiFmj_TKheHqmWTvITULHFgsGvs7xj77SeKyPlab6Ej4to_zC-XReu3jUmX5NVvvFH-N5vSqRo9qcWIHvV2SnB68AjuJCUvy5y9zRn6fmnIkwLKN017_Ll6sysff3YflwkaIWlGeNV4ddax7zk1edTFEfq8KZeA5QMbJL-hXMN73_mFhNQOugag"/>
-<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
-<div class="absolute bottom-4 left-4 right-4">
-<span class="font-label text-[10px] tracking-widest text-primary uppercase">Architecture Deep-Dive</span>
-<p class="text-xs text-secondary mt-1">Exploring Petabyte-Scale Processing in Distributed Environments.</p>
-</div>
-</div>
-<!-- Social/Technical Links -->
-<div class="flex flex-col gap-3">
-<a class="flex items-center justify-between p-3 border border-outline-variant/10 hover:border-primary/30 hover:bg-surface-container-high transition-all group" href="#">
-<span class="font-label text-xs text-on-surface-variant group-hover:text-primary transition-colors">LINKEDIN_CONNECT</span>
-<span class="material-symbols-outlined text-sm text-secondary" data-icon="open_in_new">open_in_new</span>
-</a>
-<a class="flex items-center justify-between p-3 border border-outline-variant/10 hover:border-primary/30 hover:bg-surface-container-high transition-all group" href="#">
-<span class="font-label text-xs text-on-surface-variant group-hover:text-primary transition-colors">GITHUB_REPOS</span>
-<span class="material-symbols-outlined text-sm text-secondary" data-icon="code">code</span>
-</a>
-</div>
-</div>
-</section>
-<!-- Bento Grid Experience Section -->
-<section class="max-w-7xl mx-auto px-8 py-24 border-t border-outline-variant/15">
-<h2 class="font-headline text-3xl font-bold mb-12 tracking-tight">ENGINEERED IMPACT</h2>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<!-- Card 1: Large Feature -->
-<div class="md:col-span-2 bg-surface-container-low p-8 relative overflow-hidden group">
-<div class="relative z-10 h-full flex flex-col justify-between">
-<div>
-<span class="font-label text-[10px] tracking-widest text-primary uppercase mb-4 block">Complex Systems</span>
-<h3 class="font-headline text-2xl font-bold mb-4">ETL Orchestration at Scale</h3>
-<p class="text-on-surface-variant text-sm max-w-md">Developing modular frameworks for Databricks that reduced processing costs by 40% while increasing throughput by 3x.</p>
-</div>
-<div class="pt-8">
-<span class="text-4xl font-mono text-primary/20 group-hover:text-primary/40 transition-colors">01</span>
-</div>
-</div>
-<!-- Decorative background element -->
-<div class="absolute -right-10 -bottom-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
-</div>
-<!-- Card 2: Technical Focus -->
-<div class="bg-surface-container p-8 border-l-2 border-tertiary">
-<span class="font-label text-[10px] tracking-widest text-tertiary uppercase mb-4 block">Reliability</span>
-<h3 class="font-headline text-xl font-bold mb-4">Fault-Tolerant Pipelines</h3>
-<p class="text-on-surface-variant text-xs leading-relaxed">Implementing advanced error-handling and auto-recovery mechanisms in AWS-based data streams to ensure 99.9% uptime.</p>
-</div>
-<!-- Card 3: Metrics -->
-<div class="bg-surface-container p-8 flex flex-col justify-center items-center text-center">
-<span class="text-5xl font-headline font-bold text-primary mb-2">500TB+</span>
-<span class="font-label text-[10px] tracking-widest text-secondary uppercase">Data Managed Daily</span>
-</div>
-<!-- Card 4: Strategy -->
-<div class="md:col-span-2 bg-surface-container-low p-8 flex items-center gap-8 group">
-<div class="hidden sm:block w-32 h-32 bg-surface-container border border-outline-variant/15 flex-shrink-0 relative overflow-hidden">
-<img alt="Server infrastructure" class="w-full h-full object-cover grayscale opacity-50 group-hover:scale-110 transition-transform duration-500" data-alt="Symmetrical view of high-tech data center hallway with glowing blue lights on server cabinets" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLYscytpZSWw_tSnZxKnhwAcnuu8-9CYmECTFVkRUQDJpxkWpBePnHYJn_TlWCBH78Bcj45tkhaM8o3ObyWfDQsNGEDZqoNXrWttc9Qi1BNSxq20IJFCGNnrNoXrnO_8iVacexA4Kpm2QWtqzPzMaEDZpJ4CHxeFkcq3-JKLvnWb48lB2nRWtLBEmRm5TdPyzHEj_PeccpSnegZvkAatNd5470an6P5Rge1lxLlBRxCcY9--k5fgPo6ZKj3mxsPHGDK4rNyhTtJpY"/>
-</div>
-<div>
-<span class="font-label text-[10px] tracking-widest text-primary uppercase mb-2 block">Architecture Strategy</span>
-<h3 class="font-headline text-xl font-bold mb-2">Cloud-Native Transformation</h3>
-<p class="text-on-surface-variant text-sm">Leading the migration from legacy on-premise systems to modern, serverless cloud architectures using AWS Lambda and Glue.</p>
-</div>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="bg-[#061423] w-full py-12 border-t border-[#44474c]/15">
-<div class="flex flex-col md:flex-row justify-between items-center px-8 max-w-7xl mx-auto gap-4">
-<div class="text-[#00daf3] font-bold font-headline tracking-tighter">KINETIC ARCHITECT</div>
-<div class="font-['Space_Grotesk'] text-[10px] tracking-widest uppercase text-[#bbc6e2] opacity-80">
-                © 2024 KINETIC ARCHITECT | ENGINEERED FOR SCALE
-            </div>
-<div class="flex gap-6 font-['Space_Grotesk'] text-[10px] tracking-widest uppercase">
-<a class="text-[#bbc6e2] hover:text-[#00daf3] transition-all duration-300" href="www.linkedin.com/in/mani-vaibhav-k-286ba3354">LinkedIn</a>
-<a class="text-[#bbc6e2] hover:text-[#00daf3] transition-all duration-300" href="https://github.com/ManiRukki">GitHub</a>
-<a class="text-[#bbc6e2] hover:text-[#00daf3] transition-all duration-300" href="manikolipar@gmail.com">Email</a>
-</div>
-</div>
+
+<footer>
+  <span>© 2025 Mani Vaibhav Ruhanth Koliparthi</span>
+  <span style="color:var(--c)">Senior Data Engineer</span>
+  <div class="fl">
+    <a href="https://www.linkedin.com/in/mani-vaibhav-k-286ba3354" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/ManiRukki" target="_blank" rel="noopener">GitHub</a>
+    <a href="mailto:manikolipar@gmail.com">Email</a>
+  </div>
 </footer>
-</body></html>
+
+<script>
+/* PARTICLE CANVAS */
+(function(){
+  const c=document.getElementById('bg'),ctx=c.getContext('2d');
+  let W,H,pts=[];
+  function rsz(){W=c.width=window.innerWidth;H=c.height=window.innerHeight}
+  rsz();window.addEventListener('resize',()=>{rsz();init()});
+  function init(){
+    pts=[];
+    const n=Math.min(Math.floor(W*H/14000),120);
+    for(let i=0;i<n;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.15,vy:(Math.random()-.5)*.15});
+  }
+  init();
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    pts.forEach(p=>{
+      p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0||p.x>W)p.vx*=-1;
+      if(p.y<0||p.y>H)p.vy*=-1;
+      ctx.beginPath();ctx.arc(p.x,p.y,1.2,0,Math.PI*2);
+      ctx.fillStyle='rgba(0,204,232,.28)';ctx.fill();
+    });
+    for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){
+      const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);
+      if(d<100){ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);
+        ctx.strokeStyle=`rgba(0,204,232,${.1*(1-d/100)})`;ctx.lineWidth=.5;ctx.stroke();}
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* NAV SCROLL */
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('sc',scrollY>40));
+
+/* ROUTING */
+function go(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.nl a').forEach(a=>a.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  const n=document.getElementById('n-'+id);if(n)n.classList.add('on');
+  scrollTo({top:0,behavior:'smooth'});
+  document.getElementById('nl').classList.remove('open');
+  setTimeout(rev,120);return false;
+}
+function tgnav(){document.getElementById('nl').classList.toggle('open')}
+
+/* REVEAL */
+function rev(){
+  document.querySelectorAll('.page.on .r').forEach((el,i)=>{
+    el.style.transitionDelay=(i*.05)+'s';el.classList.add('v');
+  });
+}
+window.addEventListener('scroll',()=>{
+  document.querySelectorAll('.page.on .r:not(.v)').forEach(el=>{
+    if(el.getBoundingClientRect().top<innerHeight-50)el.classList.add('v');
+  });
+});
+setTimeout(rev,220);
+
+/* TYPING EFFECT */
+(function(){
+  const el=document.getElementById('typed');if(!el)return;
+  const t=el.textContent;el.textContent='';let i=0;
+  const run=()=>{if(i<t.length){el.textContent+=t[i++];setTimeout(run,36);}};
+  setTimeout(run,700);
+})();
+
+/* METRIC COUNTER */
+function runCounters(){
+  document.querySelectorAll('.mv[data-val]').forEach(el=>{
+    const val=parseFloat(el.dataset.val),suf=el.dataset.suf||'';
+    const isFloat=val%1!==0;
+    const prefix=el.dataset.suf&&el.dataset.suf.startsWith('K')&&!el.textContent.startsWith('$')?'':'';
+    const hasDollar=el.parentElement.querySelector('.ml')?.textContent.includes('Saved');
+    let s=0,dur=1400,step=16,inc=val/(dur/step);
+    const run=()=>{
+      s=Math.min(s+inc,val);
+      const disp=isFloat?s.toFixed(1):Math.floor(s);
+      el.textContent=(hasDollar?'$':'')+disp+suf;
+      if(s<val)setTimeout(run,step);
+    };run();
+  });
+}
+const msObs=new IntersectionObserver(e=>{if(e[0].isIntersecting){runCounters();msObs.disconnect();}},{threshold:.4});
+const msEl=document.querySelector('.ms');if(msEl)msObs.observe(msEl);
+
+/* CONTACT FORM */
+function sendMsg(){
+  const n=document.getElementById('fn').value.trim();
+  const e=document.getElementById('fe').value.trim();
+  const m=document.getElementById('fm').value.trim();
+  if(!n||!e||!m){alert('Please fill in name, email, and message.');return;}
+  const s=document.getElementById('fs').value||'Portfolio Inquiry';
+  location.href=`mailto:manikolipar@gmail.com?subject=${encodeURIComponent(s)}&body=${encodeURIComponent('Name: '+n+'\nEmail: '+e+'\n\n'+m)}`;
+  const t=document.getElementById('toast');t.classList.add('on');
+  setTimeout(()=>t.classList.remove('on'),3000);
+  ['fn','fe','fs','fm'].forEach(id=>document.getElementById(id).value='');
+}
+</script>
+</body>
+</html>
